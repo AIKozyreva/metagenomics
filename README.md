@@ -3,9 +3,9 @@ ITMO_Master_Course
 
 #### Analysis of Illumina MiSeq data, single-end
 
-Data for analysis two variants: human gut metagenome (PRJNA1087311), human skin surface metagenome (SRR26268659) 
+Data for analysis two variants: train_data from lesson + human gut metagenome (PRJNA1087311), human skin surface metagenome (SRR26268659) 
 
-human gut metagenome (SRR28372423, SRR28372424, SRR28372425, SRR28372426, SRR28372428, SRR28372429, SRR28372430, SRR28372431, SRR28372432, SRR28372433) - QIIME2 with DADA2 and pretrained SILVA_db classifier
+train_data from lesson + human gut metagenome (SRR28372423, SRR28372424, SRR28372425, SRR28372426, SRR28372428, SRR28372429, SRR28372430, SRR28372431, SRR28372432, SRR28372433) - QIIME2 with DADA2 and pretrained SILVA_db classifier
 
 human skin surface metagenome (SRR26268659) - QIIME2 with deblur and pretrained SILVA_db classifier
 
@@ -82,7 +82,40 @@ Saved FeatureTable[Frequency] to: ./denoising/feature_table.qza
 Saved FeatureData[Sequence] to: ./denoising/rep_seqs.qza
 Saved SampleData[DADA2Stats] to: ./denoising/stats.qza
 ```
+We have got some features and samples data in .qza format. To see information in that files you have to convert files from .gza in .fasta format by the command:
+```
+qiime tools export --input-path ./denoising/rep_seqs.qza --output-path "./denoising/"
+qiime tools export --input-path "denoising/stats.qza" --output-path "denoising/"
+```
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/e1720c6b-f1dd-483f-a305-b3090c51e6f0)
 
+##### Classifing our representative sequences by scklearn classificator based on SILVA database
+
+On this step our sequences will get taxonomy inmormation from SILVAdb by based on this db pretrained classificator algorithm, and then we will get .gza file, and then we will export it in readable one as we have done before.
+
+```
+qiime feature-classifier classify-sklearn --i-classifier ../silva138_AB_V4_classifier.qza --i-reads denoising/rep_seqs.qza --o-classification "taxonomy/taxonomy.qza" --p-confidence 0.94
+qiime tools export --input-path "taxonomy/taxonomy.qza" --output-path "taxonomy"
+```
+Now we have got the files with taxonomy, but this file wasn't normalised and for now we can't define any meanings as diversity indexes, let's do it in the following step.
+
+##### Normalisation of data and counting Alpha-diversity by Chao1 index
+
+normalisation by sequencing depth, which is called in microbiome analysis - rarefaction - technique used to standardize the sequencing depth across samples in a dataset.
+
+When sequencing microbiome samples, each sample may have been sequenced to a different depth, meaning some samples have more sequencing reads (i.e., more data) than others. This discrepancy in sequencing depth can introduce bias when comparing diversity metrics between samples, as samples with more sequencing reads may appear to have higher diversity simply because more microbial species were detected due to deeper sequencing. To address this issue, rarefaction involves randomly subsampling the reads within each sample to an even depth, which is typically determined based on the sample with the lowest number of reads (or a predetermined depth). This process ensures that all samples have the same number of sequencing reads, thus providing a fair basis for comparing diversity metrics across samples.
+
+
+
+```
+mkdir rarefied
+qiime feature-table rarefy --i-table "denoising/feature_table.qza" --p-sampling-depth 10000 --o-rarefied-table "rarefied/otus_rar_5K.qza"
+```
+
+```
+qiime diversity alpha --i-table "rarefied/otus_rar_5K.qza" --p-metric "chao1" --o-alpha-diversity "rarefied/alpha_chao.qza"
+qiime tools export --input-path "rarefied/alpha_chao.qza" --output-path "rarefied/alpha_chao.tsv" --output-format "AlphaDiversityFormat"
+```
 
 
 
