@@ -1,7 +1,7 @@
 # metagenomics
 ITMO_Master_Course
 
-#### Analysis of Illumina MiSeq data, single-end
+### Analysis of Illumina MiSeq data, single-end
 
 Data for analysis two variants: train_data from lesson + human gut metagenome (PRJNA1087311), human skin surface metagenome (SRR26268659) 
 
@@ -15,7 +15,7 @@ Data for program: https://drive.google.com/drive/folders/1XygG6Hcd-nAY-wD-Wb4uwZ
 
 _________________________________________________________________________________________________________________________________________________
 
-##### Installing QIIME 2 Amplicon Distribution for Linnux (please install version for amplicon analysis from 2023.2, not 2024).
+### Installing QIIME 2 Amplicon Distribution for Linnux (please install version for amplicon analysis from 2023.2, not 2024).
 _In the case of usage 2024 version with this commands you will get errors on the denoising step with any data formated as in this guide_
 
 Program for 2023.2 version can be found here: https://docs.qiime2.org/2023.2/install/native/#install-qiime-2-within-a-conda-environment 
@@ -28,7 +28,7 @@ qiime --help
 ```
 _________________________________________________________________________________________________________________________________________________
 
-##### Data preparing for and import command for dada2
+### Data preparing for and import command for dada2
 
 You have to begin with creating manifest.tmp (tab-separated file, where first column is sampleID, the second one is full path to your sample.fastq). When you have the manifest/tmp you will need to convert it into format .qza - qiime2 proccedable binary fileformat, which all qiime2 subprocess work with.
 
@@ -59,7 +59,7 @@ We can check the quality of imported data, which is seq_summary.qzv, in graphica
 
 _________________________________________________________________________________________________________________________________________________
 
-##### Denoising with dada2
+### Denoising with dada2
 We start to analyse data. First of all we have to denoise and filter them by quality and length. It will be performed by dada2, which will also define the unique reads and mark them as "real unique sequence1", while many others which similar to this one, but have a few differences will be marked as "with errors" and throw them away. Each other sequence, whch has strong differences with "real unique sequence1" will be marked as "real unique sequence2" and so on until all reads passed the quality filter will be processed. 
 
 ```
@@ -111,7 +111,7 @@ Now we have got the files with taxonomy taxonomy.qza and taxonomy.tsv. taxonomy.
 but these files weren't normalised and for now we can't define any meanings as diversity indexes, let's do it in the following step.
 _________________________________________________________________________________________________________________________________________________
 
-##### Normalisation of data and counting Alpha-diversity by Chao1 index
+### Normalisation of data and counting Alpha-diversity by Chao1 index
 
 normalisation by sequencing depth, which is called in microbiome analysis - rarefaction - technique used to standardize the sequencing depth across samples in a dataset.
 
