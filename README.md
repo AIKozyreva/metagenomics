@@ -99,7 +99,7 @@ ________________________________________________________________________________
 ##### Classifing our representative sequences by scklearn classificator based on SILVA database
 
 On this step our sequences will get taxonomy inmormation from SILVAdb by based on this db pretrained classificator algorithm, and then we will get .gza file, and then we will export it in readable one as we have done before.
-
+classify-sklearn with a Naive Bayes classifier outperforms other methods we’ve tested based on several criteria for classification of 16S rRNA gene and fungal ITS sequences. It can be more difficult and frustrating for some users, however, since it requires that additional training step (but in our case we used pretrained data, so it wasn't the problem)
 ```
 qiime feature-classifier classify-sklearn --i-classifier ../silva138_AB_V4_classifier.qza --i-reads denoising/rep_seqs.qza --o-classification "taxonomy/taxonomy.qza" --p-confidence 0.94
 qiime tools export --input-path "taxonomy/taxonomy.qza" --output-path "taxonomy"
