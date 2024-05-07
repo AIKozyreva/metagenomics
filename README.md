@@ -13,6 +13,8 @@ human skin surface metagenome (SRR26268659) - QIIME2 with deblur and pretrained 
 
 Data for program: https://drive.google.com/drive/folders/1XygG6Hcd-nAY-wD-Wb4uwZZdJjgMVsbw 
 
+_________________________________________________________________________________________________________________________________________________
+
 ##### Installing QIIME 2 Amplicon Distribution for Linnux (please install version for amplicon analysis from 2023.2, not 2024).
 _In the case of usage 2024 version with this commands you will get errors on the denoising step with any data formated as in this guide_
 
@@ -24,6 +26,7 @@ conda env create -n qiime2-2023.2 --file qiime2-2023.2-py38-linux-conda.yml
 conda activate qiime2-2023.2
 qiime --help
 ```
+_________________________________________________________________________________________________________________________________________________
 
 ##### Data preparing for and import command for dada2
 
@@ -53,6 +56,8 @@ And let's visualize the seq.qza to check if import was done okay and to define v
 qiime demux summarize --i-data seq.qza --o-visualization seq_summary.qzv
 ```
 We can check the quality of imported data, which is seq_summary.qzv, in graphical view on this site: https://view.qiime2.org/ 
+
+_________________________________________________________________________________________________________________________________________________
 
 ##### Denoising with dada2
 We start to analyse data. First of all we have to denoise and filter them by quality and length. It will be performed by dada2, which will also define the unique reads and mark them as "real unique sequence1", while many others which similar to this one, but have a few differences will be marked as "with errors" and throw them away. Each other sequence, whch has strong differences with "real unique sequence1" will be marked as "real unique sequence2" and so on until all reads passed the quality filter will be processed. 
@@ -89,6 +94,8 @@ qiime tools export --input-path "denoising/stats.qza" --output-path "denoising/"
 ```
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/e1720c6b-f1dd-483f-a305-b3090c51e6f0)
 
+_________________________________________________________________________________________________________________________________________________
+
 ##### Classifing our representative sequences by scklearn classificator based on SILVA database
 
 On this step our sequences will get taxonomy inmormation from SILVAdb by based on this db pretrained classificator algorithm, and then we will get .gza file, and then we will export it in readable one as we have done before.
@@ -97,7 +104,12 @@ On this step our sequences will get taxonomy inmormation from SILVAdb by based o
 qiime feature-classifier classify-sklearn --i-classifier ../silva138_AB_V4_classifier.qza --i-reads denoising/rep_seqs.qza --o-classification "taxonomy/taxonomy.qza" --p-confidence 0.94
 qiime tools export --input-path "taxonomy/taxonomy.qza" --output-path "taxonomy"
 ```
-Now we have got the files with taxonomy, but this file wasn't normalised and for now we can't define any meanings as diversity indexes, let's do it in the following step.
+Now we have got the files with taxonomy taxonomy.qza and taxonomy.tsv. taxonomy.tsv will look like that:
+
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/2c6d1a1f-abfc-4b40-a9b4-d9b811d38173)
+
+but these files weren't normalised and for now we can't define any meanings as diversity indexes, let's do it in the following step.
+_________________________________________________________________________________________________________________________________________________
 
 ##### Normalisation of data and counting Alpha-diversity by Chao1 index
 
@@ -111,11 +123,33 @@ When sequencing microbiome samples, each sample may have been sequenced to a dif
 mkdir rarefied
 qiime feature-table rarefy --i-table "denoising/feature_table.qza" --p-sampling-depth 10000 --o-rarefied-table "rarefied/otus_rar_5K.qza"
 ```
+For defining diversity we will use Chao1 alptha-diversity index, which formula is below. It use the whole amout of abudant species, the species which were 'seemed once' and 'seemed twice' as rare species: 
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/7917ae00-c2e7-457b-8b84-7ed921a75dab)
 
 ```
 qiime diversity alpha --i-table "rarefied/otus_rar_5K.qza" --p-metric "chao1" --o-alpha-diversity "rarefied/alpha_chao.qza"
 qiime tools export --input-path "rarefied/alpha_chao.qza" --output-path "rarefied/alpha_chao.tsv" --output-format "AlphaDiversityFormat"
 ```
+_____________________________________________________________________________________________________________________________________________________
 
 
+#make readable taxa tables
+mkdir otus
+
+qiime tools export --input-path "rarefied/otus_rar_5K.qza" --output-path "otus"
+
+qiime taxa collapse --i-table "rarefied/otus_rar_5K.qza" --i-taxonomy "taxonomy/taxonomy.qza" --p-level 6 --o-collapsed-table "otus/collapse_6.qza"
+qiime tools export --input-path "otus/collapse_6.qza" --output-path "otus/summarized_taxa"
+
+
+biom convert -i "otus/summarized_taxa/feature-table.biom" -o "otus/summarized_taxa/otu_table_L6.txt" --to-tsv
+
+
+biom convert -i "otus/feature-table.biom" -o "otus/summarized_taxa/otu_table.txt" --to-tsv
+
+otu_table_L6.txt 
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/16cb60b9-2fd8-4d77-aa90-52dd044d3242)
+
+otu_table.txt
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/4b06a257-61fd-428b-959b-5e1d5bdc8de9)
 
