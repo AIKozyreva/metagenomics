@@ -153,3 +153,11 @@ otu_table_L6.txt
 otu_table.txt
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/4b06a257-61fd-428b-959b-5e1d5bdc8de9)
 
+### Visualisation 
+```
+qiime taxa barplot --i-table rarefied/otus_rar_5K.qza --i-taxonomy taxonomy/taxonomy.qza --o-visualization taxonomy/taxa-bar-plots.qzv 
+```
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/481e5112-ee14-4ebf-b0d9-3e904bc36633)
+
+Итак, мы можем видеть, что образцы подготовленные анной для урока прошли прекрасно, а то, что я просто скачала с ТСИШ не определилось вообще дальше, чем факт того, что это бактерии.
+
