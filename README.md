@@ -28,7 +28,7 @@ qiime --help
 ```
 _________________________________________________________________________________________________________________________________________________
 
-### Data preparing for and import command for dada2
+### Data preparing for and import command 
 
 You have to begin with creating manifest.tmp (tab-separated file, where first column is sampleID, the second one is full path to your sample.fastq). When you have the manifest/tmp you will need to convert it into format .qza - qiime2 proccedable binary fileformat, which all qiime2 subprocess work with.
 
@@ -96,7 +96,7 @@ qiime tools export --input-path "denoising/stats.qza" --output-path "denoising/"
 
 _________________________________________________________________________________________________________________________________________________
 
-##### Classifing our representative sequences by scklearn classificator based on SILVA database
+### Classifing our representative sequences by scklearn classificator based on SILVA database
 
 On this step our sequences will get taxonomy inmormation from SILVAdb by based on this db pretrained classificator algorithm, and then we will get .gza file, and then we will export it in readable one as we have done before.
 classify-sklearn with a Naive Bayes classifier outperforms other methods we’ve tested based on several criteria for classification of 16S rRNA gene and fungal ITS sequences. It can be more difficult and frustrating for some users, however, since it requires that additional training step (but in our case we used pretrained data, so it wasn't the problem)
