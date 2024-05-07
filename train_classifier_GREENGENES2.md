@@ -19,8 +19,10 @@ This step was widely described in README.md of this repo
 ### Step4. using pre-trained Greengenes2 classifiers
 Taxonomic classifiers perform best when they are trained based on your specific sample preparation and sequencing parameters, including the primers that were used for amplification and the length of your sequence reads.
 
-You can choose the classifier method and find references sequence for training here: https://docs.qiime2.org/2024.2/data-resources/ 
+You can choose the classifier method and find references sequence for training here: https://docs.qiime2.org/2024.2/data-resources/. We will use Naive-bayes classifier/
+
 We will take Greengenes2 2022.10 from 515F/806R region of sequences (gg_2022_10_backbone.v4.nb.qza)
+
 Below i will also try to use someone's trained classifier on Unite db with dinamic identity 97-99%, with data by all eukaryotes from here: https://github.com/colinbrislawn/unite-train/releases/tag/9.0-qiime2-2023.2-demo (unite_ver9_dynamic_all_29.11.2022-Q2-2023.2.qza)
 
 ```
