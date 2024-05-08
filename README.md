@@ -5,7 +5,7 @@ ITMO_Master_Course
 
 Data for analysis two variants: train_data from lesson + human gut metagenome (PRJNA1087311), human skin surface metagenome (SRR26268659) 
 
-train_data from lesson + human gut metagenome (SRR28372423, SRR28372424, SRR28372425, SRR28372426, SRR28372428, SRR28372429, SRR28372430, SRR28372431, SRR28372432, SRR28372433) - QIIME2 with DADA2 and pretrained SILVA_db classifier
+train_data from lesson + human gut metagenome (SRR28372423, SRR28372424, SRR28372425, SRR28372426, SRR28372428, SRR28372429, SRR28372430, SRR28372431, SRR28372432, SRR28372433) - QIIME2 with DADA2 and pretrained SILVA_db classifier. (вопрос почему эти образцы не определялись отпал, потому что на шаге с деблюром ни один образец этого проекта не прошёл через qiime quality-filter q-score, то есть и в остальных случаях они так плохо определялись из-за этого)
 
 human skin surface metagenome (SRR26268659) - QIIME2 with deblur and pretrained SILVA_db classifier
 
