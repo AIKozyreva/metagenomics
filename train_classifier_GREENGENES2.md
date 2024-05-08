@@ -1,4 +1,4 @@
-# QIIME2 with DADA2, and Naive-bayes classifier pre-trained by Greengenes2 db and manually trained for ITS2 db.
+# QIIME2 with DADA2, and Naive-bayes classifier pre-trained by Greengenes2_db, Uniref90_db and manually trained for ITS2_db.
 
 QIIME2 version: Amplicon Distribution for Linux
 Analyse Amplicon metagenome Illumina single-end data
