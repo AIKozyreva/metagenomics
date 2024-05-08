@@ -79,6 +79,63 @@ qiime taxa barplot --i-table uniref_db_rarefied/uni_otus_rar_5K.qza --i-taxonomy
 
 #### Manually training Bayes-classifier for ITS2_db and try to use it. 
 Tutorial for training is placed in this repo "ITS2_database_development.html" and it was found somewhere in the internet.
+Manual training of classifier require to have two items: _collection of reference sequences_ and _taxonomy file_ wich will correlate with this collection.
+
+**Collecting reference sequences for future classifier**
+Go to NCBI and download all sequences ITS2 for all green plants in fasta/ Now we will have file sequence.fasta with reference sequences for our future db.
+Next step is to get the acsessions of all sequences, find for them taxonomy on NCBI, download taxonomy list and then create a file, where we will combina taxonomy with acsession numbers/
+
+```
+mv sequence.fasta NCBI_Viridiplantae_ITS2_fasta_file #rename file and check amount of records
+grep -c ">" NCBI_Viridiplantae_ITS2_fasta_file # we have 250572 in my case
+```
+
+NCBI nucleotide sequences downloaded in FASTA format contain linebreaks every 70 bases (for comfortable reading). Since such structure may influent further processing steps, these linebreaks should be removed:
+
+```
+awk '!/^>/ { printf "%s", $0; n = "\n" } /^>/ { print n $0; n = "" }END { printf "%s", n }' NCBI_Viridiplantae_ITS2_fasta_file > NCBI_Viridiplantae_ITS2_fasta_file_tmp
+mv NCBI_Viridiplantae_ITS2_fasta_file_tmp NCBI_Viridiplantae_ITS2_fasta_file
+```
+
+**Collecting the taxonomic identifiers (taxids) of the organisms from which ITS2 sequences were obtained**
+Some of the following commands will take a lot of time, that's ok. Start with creating a table linking every accession number to the corresponding nucleotide sequence. 
+
+```
+grep ">" NCBI_Viridiplantae_ITS2_fasta_file | cut -d ">" -f 2 | cut -d " " -f 1 > AccessionNumbers
+paste <(cat AccessionNumbers) <(sed '/^>/d' NCBI_Viridiplantae_ITS2_fasta_file) > AccessionNumbers_seqs_linking_table
+```
+The “nucl_gb.accession2taxid” NCBI reference file must then be downloaded from their FTP website (https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/)
+(NB: 2Gb file to download and 10Gb after decompression):
+
+```
+wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
+gzip -d nucl_gb.accession2taxid.gz
+```
+Retrieving lines in the nucl_gb.accession2taxid file corresponding to the accession numbers:
+
+```
+fgrep -w -f AccessionNumbers nucl_gb.accession2taxid > AccessionNumbers_taxids_linking_table
+wc -l AccessionNumbers_taxids_linking_table #checking that taxids have been retrieved for all accession numbers/
+```
+Remain in oue files only columns with accession and taxid
+```
+awk 'BEGIN {FS=OFS="\t"} {print $2,$3}' AccessionNumbers_taxids_linking_table > AccessionNumbers_taxids_linking_table_final
+```
+Remove unnecessuary files:
+```
+rm AccessionNumbers
+rm AccessionNumbers_taxids_linking_table
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
