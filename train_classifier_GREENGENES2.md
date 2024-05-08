@@ -88,7 +88,7 @@ Next step is to get the acsessions of all sequences, find for them taxonomy on N
 
 ```
 mv sequence.fasta NCBI_Viridiplantae_ITS2_fasta_file #rename file and check amount of records
-grep -c ">" NCBI_Viridiplantae_ITS2_fasta_file # we have 250572 in my case
+grep -c ">" NCBI_Viridiplantae_ITS2_fasta_file # we have **250572** in my case
 ```
 
 NCBI nucleotide sequences downloaded in FASTA format contain linebreaks every 70 bases (for comfortable reading). Since such structure may influent further processing steps, these linebreaks should be removed:
@@ -116,7 +116,7 @@ Retrieving lines in the nucl_gb.accession2taxid file corresponding to the access
 
 ```
 fgrep -w -f AccessionNumbers nucl_gb.accession2taxid > AccessionNumbers_taxids_linking_table
-wc -l AccessionNumbers_taxids_linking_table #checking that taxids have been retrieved for all accession numbers/
+wc -l AccessionNumbers_taxids_linking_table #checking that taxids have been retrieved for all accession numbers/ **250572**
 ```
 Remain in oue files only columns with accession and taxid
 ```
@@ -133,7 +133,7 @@ First, a list of unique taxids can be retrieved:
 
 ```
 awk -F '\t' '{print $2}' AccessionNumbers_taxids_linking_table_final | sort | uniq > Taxids_uniq
-wc -l Taxids_uniq
+wc -l Taxids_uniq #**86418**
 ```
 
 Collecting taxonomic lineages for these taxids. Retrieving the reference file linking taxids to taxonomic lineages. The “new_taxdump.tar.gz” NCBI reference file must be downloaded from their FTP website:
