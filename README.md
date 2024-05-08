@@ -157,6 +157,7 @@ otu_table.txt
 ```
 qiime taxa barplot --i-table rarefied/otus_rar_5K.qza --i-taxonomy taxonomy/taxonomy.qza --o-visualization taxonomy/taxa-bar-plots.qzv 
 ```
+Params for visualization: Taxonomic Level 6; Color Palette schemeset3; Sort samples by d__Bacteria; Ascending;
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/481e5112-ee14-4ebf-b0d9-3e904bc36633)
 
 Итак, мы можем видеть, что образцы подготовленные анной для урока прошли прекрасно, а то, что я просто скачала с ТСИШ не определилось вообще дальше, чем факт того, что это бактерии.
