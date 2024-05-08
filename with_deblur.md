@@ -17,32 +17,34 @@ qiime tools import --type 'SampleData[SequencesWithQuality]' --input-path ./mani
 demultiplexing can be done with one of the methods described here: 
 my data hasalready been demultiplexed, so i won't do it and can go to the next step.
 
-### Step3. Joining data
+### Step3. Joining data (this step only if you have had paired-end data)
 
 ```
-qiime vsearch merge-pairs --i-demultiplexed-seqs seq.qza --o-merged-sequences JOINseq.qza
-qiime demux summarize --i-data JOINseq.qza --o-visualization JOINseq.qzv
+#qiime vsearch merge-pairs --i-demultiplexed-seqs seq.qza --o-merged-sequences JOINseq.qza
+#qiime demux summarize --i-data JOINseq.qza --o-visualization JOINseq.qzv
 ```
-Add some quality control, just for in case:
+### Step4. Add some quality control, just for in case:
 ```
 qiime quality-filter q-score --i-demux JOINseq.qza --o-filtered-sequences FJseq.qza --o-filter-stats FJseq-stats.qza
 qiime demux summarize --i-data FJseq.qza --o-visualization FJseq.qzv
 ```
+###############################################################################**"NJ <SK GJCCKTLYBQ IFU RJNJHSQ Z ECGTKF CLTKFNM **###########################################################################################
 
-### Step4. Denoising (only for 16S sequences samples) by Deblur
+
+### Step5. Denoising (only for 16S sequences samples) by Deblur
 ```
 qiime deblur denoise-16S --i-demultiplexed-seqs FJseq.qza --p-trim-length 250 --p-sample-stats --o-representative-sequences "./denoising/deblur-rep-seqs.qza" --o-table "./denoising/deblur-table.qza" --o-stats "./denoising/deblur-stats.qza"
 qiime feature-table summarize --i-table ./denoising/deblur-table.qza --o-visualization ./denoising/deblur-table.qzv
 qiime tools export --input-path ./denoising/deblur-rep_seqs.qza --output-path "denoising/"
 qiime tools export --input-path ./denoising/deblur-stats.qza" --output-path "denoising/"
 ```
-### Step5. Classification with Bayes pretraind on SILVA db
+### Step6. Classification with Bayes pretraind on SILVA db
 
 ```
 qiime feature-classifier classify-sklearn --i-classifier ../silva138_AB_V4_classifier.qza --i-reads denoising/deblur-rep_seqs.qza --o-classification "deblur-taxonomy/deblur-taxonomy.qza" --p-confidence 0.94
 qiime tools export --input-path "deblur-taxonomy/deblur-taxonomy.qza" --output-path "DeblurTaxonomy"
 ```
-### Step6. Normalisation of data and counting Alpha-diversity by Chao1 index
+### Step7. Normalisation of data and counting Alpha-diversity by Chao1 index
 ```
 mkdir deblur-rarefied
 qiime feature-table rarefy --i-table "denoising/deblur-table.qza" --p-sampling-depth 10000 --o-rarefied-table "deblur-rarefied/deblur_otus_rar_5K.qza"
@@ -50,7 +52,7 @@ qiime diversity alpha --i-table "deblur-rarefied/deblur_otus_rar_5K.qza" --p-met
 qiime tools export --input-path "deblur-rarefied/deblur-alpha_chao.qza" --output-path "deblur-rarefied/deblur-alpha_chao.tsv" --output-format "AlphaDiversityFormat"
 ```
 
-### Step7. Visualization
+### Step8. Visualization
 ```
 qiime taxa barplot --i-table deblur-rarefied/deblur_otus_rar_5K.qza --i-taxonomy deblur-taxonomy/deblur-taxonomy.qza --o-visualization deblur-taxonomy/deblur-taxa-barplots.qzv 
 ```
