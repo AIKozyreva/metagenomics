@@ -1,6 +1,7 @@
-# Analyse Amplicon metagenome Illumina single-end data by QIIME2 with DADA2, and Naive-bayes classifier pre-trained by Greengenes2 db and manually trained for ITS2 db.
+# QIIME2 with DADA2, and Naive-bayes classifier pre-trained by Greengenes2 db and manually trained for ITS2 db.
 
-QIIME2 version: Amplicon Distribution for Linux 
+QIIME2 version: Amplicon Distribution for Linux
+Analyse Amplicon metagenome Illumina single-end data
 Program for 2023.2 version can be found here: https://docs.qiime2.org/2023.2/install/native/#install-qiime-2-within-a-conda-environment
 Page with available databases (only sequences) for classificator training: https://docs.qiime2.org/2024.2/data-resources/
 Tutorial how to perform training with usage q2-feature-classifier: https://docs.qiime2.org/2024.2/tutorials/feature-classifier/ 
