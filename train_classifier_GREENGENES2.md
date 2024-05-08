@@ -37,7 +37,8 @@ qiime feature-table rarefy --i-table "denoising/feature_table.qza" --p-sampling-
 qiime diversity alpha --i-table "GG_db_rarefied/GG_otus_rar_5K.qza" --p-metric "chao1" --o-alpha-diversity "GG_db_rarefied/alpha_chao.qza"
 qiime tools export --input-path "GG_db_rarefied/alpha_chao.qza" --output-path "GG_db_rarefied/GG_alpha_chao.tsv" --output-format "AlphaDiversityFormat"
 qiime tools export --input-path "GG_db_rarefied/GG_otus_rar_5K.qza" --output-path "GG_otus"
-**qiime taxa collapse --i-table "GG_db_rarefied/GG_otus_rar_5K.qza" --i-taxonomy "GG_taxonomy/taxonomy.qza" --p-level 6 --o-collapsed-table "otus/collapse_6.qza" qiime tools export --input-path "otus/collapse_6.qza" --output-path "otus/GG_summarized_taxa"**
+**qiime taxa collapse --i-table "GG_db_rarefied/GG_otus_rar_5K.qza" --i-taxonomy "GG_taxonomy/taxonomy.qza" --p-level 6 --o-collapsed-table "otus/collapse_6.qza"**
+qiime tools export --input-path "otus/collapse_6.qza" --output-path "otus/GG_summarized_taxa"
 biom convert -i "otus/GG_summarized_taxa/feature-table.biom" -o "otus/GG_summarized_taxa/otu_table_L6.txt" --to-tsv
 biom convert -i "otus/feature-table.biom" -o "otus/GG_summarized_taxa/otu_table.txt" --to-tsv
 
