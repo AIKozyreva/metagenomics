@@ -33,8 +33,8 @@ qiime demux summarize --i-data FJseq.qza --o-visualization FJseq.qzv
 ```
 qiime deblur denoise-16S --i-demultiplexed-seqs FJseq.qza --p-trim-length 250 --p-sample-stats --o-representative-sequences "./denoising/deblur-rep-seqs.qza" --o-table "./denoising/deblur-table.qza" --o-stats "./denoising/deblur-stats.qza"
 qiime feature-table summarize --i-table ./denoising/deblur-table.qza --o-visualization ./denoising/deblur-table.qzv
-qiime tools export --input-path "denoising/rep_seqs.qza --output-path "denoising/"
-qiime tools export --input-path "denoising/stats.qza" --output-path "denoising/"
+qiime tools export --input-path ./denoising/rep_seqs.qza --output-path "denoising/"
+qiime tools export --input-path ./denoising/stats.qza" --output-path "denoising/"
 ```
 
 
