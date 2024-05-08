@@ -20,17 +20,23 @@ my data hasalready been demultiplexed, so i won't do it and can go to the next s
 ### Step3. Joining data
 
 ```
-qiime vsearch merge-pairs --i-demultiplexed-seqs seq.qza --o-merged-sequences Joinseq.qza
-qiime demux summarize --i-data Joinseq.qza --o-visualization Joinseq.qzv
+qiime vsearch merge-pairs --i-demultiplexed-seqs seq.qza --o-merged-sequences JOINseq.qza
+qiime demux summarize --i-data JOINseq.qza --o-visualization JOINseq.qzv
 ```
 Add some quality control, just for in case:
 ```
-qiime quality-filter q-score --i-demux Joinseq.qza --o-filtered-sequences FJseq.qza --o-filter-stats FJseq-stats.qza
+qiime quality-filter q-score --i-demux JOINseq.qza --o-filtered-sequences FJseq.qza --o-filter-stats FJseq-stats.qza
 qiime demux summarize --i-data FJseq.qza --o-visualization FJseq.qzv
 ```
 
 ### Step4. Denoising (only for 16S sequences samples) by Deblur
 ```
-qiime deblur denoise-16S --i-demultiplexed-seqs FJseq.qza --p-trim-length 250 --p-sample-stats --o-representative-sequences deblur-rep-seqs.qza --o-table deblur-table.qza --o-stats deblur-stats.qza
+qiime deblur denoise-16S --i-demultiplexed-seqs FJseq.qza --p-trim-length 250 --p-sample-stats --o-representative-sequences "./denoising/deblur-rep-seqs.qza" --o-table "./denoising/deblur-table.qza" --o-stats "./denoising/deblur-stats.qza"
+qiime feature-table summarize --i-table ./denoising/deblur-table.qza --o-visualization ./denoising/deblur-table.qzv
+qiime tools export --input-path "denoising/rep_seqs.qza --output-path "denoising/"
+qiime tools export --input-path "denoising/stats.qza" --output-path "denoising/"
 ```
+
+
+
 
