@@ -51,8 +51,10 @@ qiime taxa barplot --i-table rarefied/otus_rar_5K.qza --i-taxonomy taxonomy/taxo
 mkdir uniref_db_taxonomy
 qiime feature-classifier classify-sklearn --i-classifier ../unite_ver9_dynamic_all_29.11.2022-Q2-2023.2.qza --i-reads denoising/rep_seqs.qza --o-classification "uniref_db_taxonomy/uni_taxonomy.qza" --p-confidence 0.94
 qiime tools export --input-path "uniref_db_taxonomy/uni_taxonomy.qza" --output-path "UNItaxonomy"
+
 ```
 All other commands described in README.md stay the same and listed below one by one:
+
 ```
 mkdir uniref_db_rarefied
 qiime feature-table rarefy --i-table "denoising/feature_table.qza" --p-sampling-depth 10000 --o-rarefied-table "uniref_db_rarefied/uni_otus_rar_5K.qza"
