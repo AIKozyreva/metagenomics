@@ -26,10 +26,11 @@ qiime demux summarize --i-data Joinseq.qza --o-visualization Joinseq.qzv
 Add some quality control, just for in case:
 ```
 qiime quality-filter q-score --i-demux Joinseq.qza --o-filtered-sequences FJseq.qza --o-filter-stats FJseq-stats.qza
+qiime demux summarize --i-data FJseq.qza --o-visualization FJseq.qzv
 ```
 
 ### Step4. Denoising (only for 16S sequences samples) by Deblur
 ```
-qiime deblur denoise-16S --i-demultiplexed-seqs demux-joined-filtered.qza --p-trim-length 250 --p-sample-stats --o-representative-sequences rep-seqs.qza --o-table table.qza --o-stats deblur-stats.qza
+qiime deblur denoise-16S --i-demultiplexed-seqs FJseq.qza --p-trim-length 250 --p-sample-stats --o-representative-sequences deblur-rep-seqs.qza --o-table deblur-table.qza --o-stats deblur-stats.qza
 ```
 
