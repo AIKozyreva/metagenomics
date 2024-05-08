@@ -36,6 +36,13 @@ qiime feature-table summarize --i-table ./denoising/deblur-table.qza --o-visuali
 qiime tools export --input-path ./denoising/deblur-rep_seqs.qza --output-path "denoising/"
 qiime tools export --input-path ./denoising/deblur-stats.qza" --output-path "denoising/"
 ```
+### Step5. Denoising (only for 16S sequences samples) by Deblur
+
+```
+qiime feature-classifier classify-sklearn --i-classifier ../silva138_AB_V4_classifier.qza --i-reads denoising/deblur-rep_seqs.qza --o-classification "deblur-taxonomy/deblur-taxonomy.qza" --p-confidence 0.94
+qiime tools export --input-path "deblur-taxonomy/deblur-taxonomy.qza" --output-path "DeblurTaxonomy"
+```
+
 
 
 
