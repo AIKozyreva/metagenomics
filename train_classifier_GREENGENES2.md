@@ -48,6 +48,8 @@ qiime taxa barplot --i-table GG_db_rarefied/GG_otus_rar_5K.qza --i-taxonomy GG_d
 картинка
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/3a4ac555-88d0-4737-90b7-6781a8f0f66d)
 
+Ничего особенно не поменялось, мои несколько образцовв всё также не определяются, вероятно я взяла пллохие образцы, но хотя бы можно сделат вывод, что небольшая разница в идетификации есть, но она почти незаметна. 
+
 
 #### Using db Uniref90 97-99% identity for all eukaryotes db (unite_ver9_dynamic_all_29.11.2022-Q2-2023.2.qza) pretrained classifier
 
