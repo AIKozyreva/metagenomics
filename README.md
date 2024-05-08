@@ -133,19 +133,17 @@ qiime tools export --input-path "rarefied/alpha_chao.qza" --output-path "rarefie
 _____________________________________________________________________________________________________________________________________________________
 
 
-#make readable taxa tables
+### Make readable taxa tables
+
+```
 mkdir otus
-
 qiime tools export --input-path "rarefied/otus_rar_5K.qza" --output-path "otus"
-
 qiime taxa collapse --i-table "rarefied/otus_rar_5K.qza" --i-taxonomy "taxonomy/taxonomy.qza" --p-level 6 --o-collapsed-table "otus/collapse_6.qza"
 qiime tools export --input-path "otus/collapse_6.qza" --output-path "otus/summarized_taxa"
 
-
 biom convert -i "otus/summarized_taxa/feature-table.biom" -o "otus/summarized_taxa/otu_table_L6.txt" --to-tsv
-
-
 biom convert -i "otus/feature-table.biom" -o "otus/summarized_taxa/otu_table.txt" --to-tsv
+```
 
 otu_table_L6.txt 
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/16cb60b9-2fd8-4d77-aa90-52dd044d3242)
@@ -153,6 +151,7 @@ otu_table_L6.txt
 otu_table.txt
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/4b06a257-61fd-428b-959b-5e1d5bdc8de9)
 
+_____________________________________________________________________________________________________________________________________________________
 ### Visualisation 
 ```
 qiime taxa barplot --i-table rarefied/otus_rar_5K.qza --i-taxonomy taxonomy/taxonomy.qza --o-visualization taxonomy/taxa-bar-plots.qzv 
