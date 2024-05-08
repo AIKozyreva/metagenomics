@@ -42,6 +42,14 @@ qiime tools export --input-path ./denoising/deblur-stats.qza" --output-path "den
 qiime feature-classifier classify-sklearn --i-classifier ../silva138_AB_V4_classifier.qza --i-reads denoising/deblur-rep_seqs.qza --o-classification "deblur-taxonomy/deblur-taxonomy.qza" --p-confidence 0.94
 qiime tools export --input-path "deblur-taxonomy/deblur-taxonomy.qza" --output-path "DeblurTaxonomy"
 ```
+### Step6. Normalisation of data and counting Alpha-diversity by Chao1 index
+```
+mkdir deblur-rarefied
+qiime feature-table rarefy --i-table "denoising/deblur-table.qza" --p-sampling-depth 10000 --o-rarefied-table "deblur-rarefied/deblur_otus_rar_5K.qza"
+qiime diversity alpha --i-table "deblur-rarefied/deblur_otus_rar_5K.qza" --p-metric "chao1" --o-alpha-diversity "deblur-rarefied/deblur-alpha_chao.qza"
+qiime tools export --input-path "deblur-rarefied/deblur-alpha_chao.qza" --output-path "deblur-rarefied/deblur-alpha_chao.tsv" --output-format "AlphaDiversityFormat"
+```
+
 
 
 
