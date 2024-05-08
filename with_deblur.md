@@ -28,8 +28,6 @@ my data hasalready been demultiplexed, so i won't do it and can go to the next s
 qiime quality-filter q-score --i-demux JOINseq.qza --o-filtered-sequences FJseq.qza --o-filter-stats FJseq-stats.qza
 qiime demux summarize --i-data FJseq.qza --o-visualization FJseq.qzv
 ```
-###############################################################################**"NJ <SK GJCCKTLYBQ IFU RJNJHSQ Z ECGTKF CLTKFNM **###########################################################################################
-
 
 ### Step5. Denoising (only for 16S sequences samples) by Deblur
 ```
