@@ -50,6 +50,12 @@ qiime diversity alpha --i-table "deblur-rarefied/deblur_otus_rar_5K.qza" --p-met
 qiime tools export --input-path "deblur-rarefied/deblur-alpha_chao.qza" --output-path "deblur-rarefied/deblur-alpha_chao.tsv" --output-format "AlphaDiversityFormat"
 ```
 
+### Step7. Visualization
+```
+qiime taxa barplot --i-table deblur-rarefied/deblur_otus_rar_5K.qza --i-taxonomy deblur-taxonomy/deblur-taxonomy.qza --o-visualization deblur-taxonomy/deblur-taxa-barplots.qzv 
+```
+
+картинка 
 
 
 
