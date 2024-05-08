@@ -74,8 +74,9 @@ biom convert -i "UNI_otus/feature-table.biom" -o "UNI_otus/UNI_summarized_taxa/U
 
 qiime taxa barplot --i-table uniref_db_rarefied/uni_otus_rar_5K.qza --i-taxonomy uniref_db_taxonomy/uni_taxonomy.qza --o-visualization uniref_db_taxonomy/UNI-taxa-barplots.qzv
 ```
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/46dc516c-8788-4832-a04f-e049f70d09a9)
 
-картинка
+картинка. Так мы можем видеть что если сделать те же действия с бд в которой растения и грибы, то мы сможем понять какие люди что кушали. вот кто-то кушал растения и грибочки...
 
 ### Step5. Manually training Bayes-classifier for ITS2_db and try to use it. 
 Tutorial for training is placed in this repo "ITS2_database_development.html" and it was found somewhere in the internet.
