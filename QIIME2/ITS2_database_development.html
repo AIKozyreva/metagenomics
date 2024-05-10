@@ -1,0 +1,1218 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<style>body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    background-color: #dddddd;
+    background-image: linear-gradient(#f1f1f1, #dddddd);
+    background-repeat: repeat-x;
+    border-radius: 2px;
+    border-width: 1px;
+    border-color: #dddddd #cccccc #cccccc #dddddd;
+    border-image: none;
+    border-style: solid;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}</style>
+</head>
+<body>
+<p>This bash pipeline describes the DB4Q2 workflow, which allows developing curated reference databases for taxonomic analyses. This workflow is used here to develop a <a href="https://qiime2.org/">QIIME2</a>-compatible reference database for the plant Internal Transcribed Spacer 2  (ITS2) barcode sequence, starting with a dataset downloaded on the National Center for Biotechnology Information (NCBI) <a href="https://www.ncbi.nlm.nih.gov/nucleotide/advanced">website</a>.</p>
+
+<p>This workflow can be applied to develop reference databases not only for plants but for any domain of life and any barcode sequence, by simply modifying the keywords used on the NCBI website to retrieve a custom set of nucleotide sequences, as described below.</p>
+
+<h1 id="Summary">Summary</h1>
+
+<p><a href="#anchor1">1. Retrieving all plant ITS2 nucleotide sequences  from NCBI database</a></p>
+
+<p><a href="#anchor2">1.1. Online</a></p>
+
+<p><a href="#anchor3">1.2. Offline</a></p>
+
+<p><a href="#anchor4">2. Getting taxonomic identifier (taxid) for each accession number</a></p>
+
+<p><a href="#anchor5">3. Getting taxonomic lineages for each taxid</a></p>
+
+<p><a href="#anchor6">4. Creating a global table gathering accession numbers, taxids, taxonomic lineages and nucleotide sequences</a></p>
+
+<p><a href="#anchor7">5. Creating QIIME2-formatted FASTA and taxonomic lineages files and importation into QIIME2</a></p>
+
+<p><a href="#anchor8">6. Removing low-quality sequences</a></p>
+
+<p><a href="#anchor9">7. Dereplicating sequences [Optional]</a></p>
+
+<p><a href="#anchor10">8. Filtering out suspected fungal sequences</a></p>
+
+<p><a href="#anchor11">9. Filtering out suspected misidentified sequences</a></p>
+
+<p><a href="#anchor12">10. Extracting the region of reference sequences that was sequenced [Optional]</a></p>
+
+<p><a name="anchor1"></p>
+
+<h2 id="L1..Retrieving.all.plant.ITS2.nucleotide.sequences..from.NCBI.database">1. Retrieving all plant ITS2 nucleotide sequences  from NCBI database</h2>
+
+<p></a>
+<a name="anchor2"></p>
+
+<h3 id="L1.1..Online">1.1. Online</h3>
+
+<p></a></p>
+
+<p>All available plant ITS2 sequences were searched on the NCBI website on 9 August 2021 using the following <a href="https://www.ncbi.nlm.nih.gov/books/NBK3837/#EntrezHelp.Writing_Advanced_Sea">Entrez</a> text query:</p>
+
+<blockquote><p>((viridiplantae[Organism] AND its2) AND 100:10000000[Sequence Length]) NOT (uncultured OR environmental sample OR incertae sedis OR unverified)</p></blockquote>
+
+<p><a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=%28%28viridiplantae%5BOrganism%5D%20AND%20its2%29%20AND%20100%3A10000000%5BSequence%20Length%5D%29%20NOT%20%28uncultured%20OR%20environmental%20sample%20OR%20incertae%20sedis%20OR%20unverified%29">The resulting records</a> were then downloaded via the &ldquo;Send to&rdquo; menu :</p>
+
+<blockquote><p>Send to > Complete Record > File > Format : FASTA</p></blockquote>
+
+<p>Renaming file and checking that all records have been retrieved :</p>
+
+<pre><code class="markdown">mv sequence.fasta NCBI_Viridiplantae_ITS2_fasta_file
+
+grep -c "&gt;" NCBI_Viridiplantae_ITS2_fasta_file  
+
+# 238018 =&gt; ok
+</code></pre>
+
+<p>NCBI nucleotide sequences downloaded in FASTA format display linebreaks every 70 bases. Since such structure may hinder further sequence processing steps, these linebreaks were removed :</p>
+
+<pre><code class="markdown">awk '!/^&gt;/ { printf "%s", $0; n = "\n" } /^&gt;/ { print n $0; n = "" }END { printf "%s", n }' NCBI_Viridiplantae_ITS2_fasta_file &gt; NCBI_Viridiplantae_ITS2_fasta_file_tmp
+
+mv NCBI_Viridiplantae_ITS2_fasta_file_tmp NCBI_Viridiplantae_ITS2_fasta_file
+</code></pre>
+
+<p><a name="anchor3"></p>
+
+<h3 id="L1.2..Offline">1.2. Offline</h3>
+
+<p></a></p>
+
+<p>Alternatively, this nucleotide sequence retrieval can be carried out mainly offline (the only online step is the initial retrieval of sequence accession numbers, which only represents some kB/MB to be downloaded in general).<br/>
+This procedure has the huge advantage to be independent of NCBI data download restrictions in terms of volume and bandwidth (direct download can be complicated during working hours and may even systematically crash when attempting to retrieve large datasets).</p>
+
+<p>After having installed and configured the BLAST+ suite as described <a href="https://www.ncbi.nlm.nih.gov/books/NBK52640/">here</a> and downloaded the preformatted nt NCBI BLAST database as detailed <a href="https://www.ncbi.nlm.nih.gov/books/NBK537770/">here</a>, it is possible to retrieve from this local database every <em>Viridiplantae</em> ITS2 sequence.</p>
+
+<p>To do so, the first step - the only one requiring a connection to the NCBI website - is to retrieve the accession numbers of every record corresponding to the Entrez query :</p>
+
+<blockquote><p>((viridiplantae[Organism] AND its2) AND 100:10000000[Sequence Length]) NOT (uncultured OR environmental sample OR incertae sedis OR unverified)</p></blockquote>
+
+<p>Sequence accession numbers can be downloaded via the &ldquo;Send to&rdquo; menu:</p>
+
+<blockquote><p>Send to > Complete Record > File > Format : Accession List</p></blockquote>
+
+<p>Once saved under the &ldquo;sequence.seq&rdquo; file in this example, the accession numbers can be used in a BLAST+ command to automatically retrieve corresponding nucleotide sequences from the local BLAST database :</p>
+
+<pre><code class="markdown">blastdbcmd \
+  -db nt \
+  -entry_batch sequence.seq \
+  -out NCBI_Viridiplantae_ITS2_fasta_file \
+  -logfile logfile.log
+</code></pre>
+
+<p><a name="anchor4"></p>
+
+<h2 id="L2..Getting.taxonomic.identifier..taxid..for.each.accession.number">2. Getting taxonomic identifier (taxid) for each accession number</h2>
+
+<p></a></p>
+
+<p>The objective here is to collect the taxonomic identifiers (taxids) of the organisms from which ITS2 sequences were obtained.</p>
+
+<p>The first step is to create a table linking every accession number to the corresponding nucleotide sequence:</p>
+
+<pre><code class="markdown">grep "&gt;" NCBI_Viridiplantae_ITS2_fasta_file | cut -d "&gt;" -f 2 | cut -d " " -f 1 &gt; AccessionNumbers
+
+paste \
+  &lt;(cat AccessionNumbers) \
+  &lt;(sed '/^&gt;/d' NCBI_Viridiplantae_ITS2_fasta_file) &gt; AccessionNumbers_seqs_linking_table
+</code></pre>
+
+<p>The &ldquo;nucl_gb.accession2taxid&rdquo; NCBI reference file must then be downloaded from their FTP website (NB: large 2 Gb file to download and 10 Gb after decompression):</p>
+
+<pre><code class="markdown">wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
+
+gzip -d nucl_gb.accession2taxid.gz
+</code></pre>
+
+<p>Retrieving lines in the nucl_gb.accession2taxid file corresponding to the accession numbers:</p>
+
+<pre><code class="markdown">fgrep -w -f AccessionNumbers nucl_gb.accession2taxid &gt; AccessionNumbers_taxids_linking_table
+</code></pre>
+
+<p><em>NB: Searching for so many accession numbers in such a large file can be resource intensive and take a long time. The fgrep command has shown to be particularly efficient compared to other lookup commands.</em></p>
+
+<p>Checking that taxids have been retrieved for all accession numbers:</p>
+
+<pre><code class="markdown">wc -l AccessionNumbers_taxids_linking_table 
+
+# 238018 =&gt; ok 
+</code></pre>
+
+<p><u>If the result of the previous command equals the number of sequences in the dataset (like in this case)</u>:</p>
+
+<p>It means that every taxid has been retrieved. Hence, the user can run the following command to keep only columns corresponding to accession numbers and taxids:</p>
+
+<p><details>
+  <summary>Click here if all taxids have been retrieved</summary></p>
+
+<pre><code class="markdown">awk 'BEGIN {FS=OFS="\t"} {print $2,$3}' AccessionNumbers_taxids_linking_table &gt; AccessionNumbers_taxids_linking_table_final
+</code></pre>
+
+<p>Optional clean-up of temporary files that are no longer useful:</p>
+
+<pre><code class="markdown">rm AccessionNumbers
+rm AccessionNumbers_taxids_linking_table
+</code></pre>
+
+<p>The user can now directly jump to the point 3 &ldquo;Getting taxonomic lineages for each taxid&rdquo;.</p>
+
+<p></details></p>
+
+<p><u>If the result of the previous command is smaller than the number of sequences in the dataset</u>:</p>
+
+<p>It means that some taxids could not be retrieved. In this case, the next few points must be followed, before jumping to point 3:</p>
+
+<p><details>
+  <summary>Click here if some taxids are missing</summary></p>
+
+<h3 id="Retrieving.remaining.taxids">Retrieving remaining taxids</h3>
+
+<h6 id="Identifying.accession.numbers.not.found.in.accession2taxid.table">Identifying accession numbers not found in accession2taxid table</h6>
+
+<pre><code class="markdown">awk -F '\t' '{print $2}' AccessionNumbers_taxids_linking_table &gt; AccessionNumbers_found_in_accession2taxid
+
+cat AccessionNumbers AccessionNumbers_found_in_accession2taxid | sort | uniq -u &gt; AccessionNumbers_not_found
+</code></pre>
+
+<h6 id="Building.one.API.query.with.all.missing.accession.numbers.and.downloading.the.results.as.an.xml.file">Building one API query with all missing accession numbers and downloading the results as an xml file</h6>
+
+<pre><code class="markdown">url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;rettype=fasta&amp;retmode=xml&amp;id="
+url+=$(paste -s -d "," AccessionNumbers_not_found)
+
+curl $url &gt; AccessionNumbers_not_found.xml
+</code></pre>
+
+<h6 id="Extracting.the.nodes.of.interest.from.the.xml.file">Extracting the nodes of interest from the xml file</h6>
+
+<pre><code class="markdown">paste \
+ &lt;(xmllint --xpath '//TSeq_accver/node()' AccessionNumbers_not_found.xml) \
+ &lt;(xmllint --xpath '//TSeq_taxid/node()' AccessionNumbers_not_found.xml) &gt; Missing_taxids
+</code></pre>
+
+<h6 id="Merging.both.files.in.a.single.accession.numbers.taxids.linking.table">Merging both files in a single accession numbers/taxids linking table</h6>
+
+<pre><code class="markdown">awk 'BEGIN {FS=OFS="\t"} {print $2,$3}' AccessionNumbers_taxids_linking_table &gt; AccessionNumbers_taxids_linking_table_extracted
+
+cat AccessionNumbers_taxids_linking_table_extracted Missing_taxids &gt; AccessionNumbers_taxids_linking_table_final
+</code></pre>
+
+<p>Optional clean-up of temporary files that are no longer useful</p>
+
+<pre><code class="markdown">rm AccessionNumbers
+rm AccessionNumbers_found_in_accession2taxid
+rm AccessionNumbers_not_found
+rm AccessionNumbers_not_found.xml
+rm AccessionNumbers_taxids_linking_table
+rm AccessionNumbers_taxids_linking_table_extracted
+rm Missing_taxids
+</code></pre>
+
+<p></details></p>
+
+<p><a name="anchor5"></p>
+
+<h2 id="L3..Getting.taxonomic.lineages.for.each.taxid">3. Getting taxonomic lineages for each taxid</h2>
+
+<p></a></p>
+
+<p>First, a list of unique taxids can be retrieved:</p>
+
+<pre><code class="markdown">awk -F '\t' '{print $2}' AccessionNumbers_taxids_linking_table_final | sort | uniq &gt; Taxids_uniq
+
+wc -l Taxids_uniq 
+
+# 83493
+</code></pre>
+
+<h3 id="Collecting.taxonomic.lineages.for.these.taxids">Collecting taxonomic lineages for these taxids</h3>
+
+<h6 id="Retrieving.the.reference.file.linking.taxids.to.taxonomic.lineages">Retrieving the reference file linking taxids to taxonomic lineages</h6>
+
+<p>The “new_taxdump.tar.gz” NCBI reference file must be downloaded from their FTP website:</p>
+
+<pre><code class="markdown">mkdir taxdump
+
+wget https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz
+mv new_taxdump.tar.gz taxdump/
+
+tar -xvzf taxdump/new_taxdump.tar.gz -C taxdump
+</code></pre>
+
+<p>The <em>rankedlineage.dmp</em> file can then be reformatted with a simpler field separator (pipe):</p>
+
+<pre><code class="markdown">sed -i "s/\t//g" taxdump/rankedlineage.dmp
+</code></pre>
+
+<h6 id="Linking.unique.taxids.from.our.dataset.to.their.corresponding.taxonomic.lineages">Linking unique taxids from our dataset to their corresponding taxonomic lineages</h6>
+
+<p>The <em>rankedlineage.dmp</em> file must first be sorted using the taxids column field:</p>
+
+<pre><code class="markdown">sort -t "|" -k 1b,1 taxdump/rankedlineage.dmp &gt; taxdump/rankedlineage_sorted
+</code></pre>
+
+<p>Taxids can then be associated with their corresponding taxonomic lineages:</p>
+
+<pre><code class="markdown">join -t "|" -1 1 -2 1 -a 1 Taxids_uniq taxdump/rankedlineage_sorted &gt; Taxids_taxonomic_lineages_linking_table
+
+wc -l Taxids_taxonomic_lineages_linking_table
+
+# 83493
+</code></pre>
+
+<p>Checking that there is no empty line in the second column:</p>
+
+<pre><code class="markdown">awk -F '|' '{print $2}' Taxids_taxonomic_lineages_linking_table | grep -c '^$'       
+
+# 6
+</code></pre>
+
+<p><u>If the result of the previous command is 0</u>:</p>
+
+<p>It means that all taxonomic lineages have been successfully retrieved. The user can thus follow these few points to reformat taxonomic lineages:</p>
+
+<p><details>
+  <summary>Click here if all taxonomic lineages have been retrieved</summary></p>
+
+<h3 id="Reformatting.taxonomic.lineages">Reformatting taxonomic lineages</h3>
+
+<p>The taxids/taxonomic lineages file can then be reformatted to match QIIME2 formatting requirements:</p>
+
+<pre><code class="mardown">paste \
+  &lt;(awk -F "|" '$2!="" {print $1}' Taxids_taxonomic_lineages_linking_table) \
+  &lt;(awk -F "|" 'BEGIN {OFS=""} $2!="" {print "k__",$9,"; p__",$8,"; c__",$7,"; o__",$6,"; f__",$5,"; g__",$4,"; s__",$2}' Taxids_taxonomic_lineages_linking_table) &gt; Taxids_taxonomic_lineages_linking_table_reformatted
+</code></pre>
+
+<p>Removing genus names in species-rank annotations to match the structure of sequence data obtained via the RESCRIPt <a href="https://forum.qiime2.org/t/using-rescript-to-compile-sequence-databases-and-taxonomy-classifiers-from-ncbi-genbank/15947">get-ncbi-data method</a>:</p>
+
+<pre><code class="markdown">paste -d "" \
+  &lt;(awk -F 's__' '{OFS=""} {print $1,"s__"}' Taxids_taxonomic_lineages_linking_table_reformatted) \
+  &lt;(awk -F 's__' '{print $2}' Taxids_taxonomic_lineages_linking_table_reformatted | cut -d " " -f 2-) &gt; Taxids_taxonomic_lineages_linking_table_final
+</code></pre>
+
+<p>The user can now directly switch to point 4: &ldquo;Creating a global table gathering accession numbers, taxids, taxonomic lineages and nucleotide sequences&rdquo;.</p>
+
+<p></details></p>
+
+<p><u>If the result of the previous command is > 0 (like in this case)</u>:</p>
+
+<p>Some taxonomic lineages are missing and the user must therefore follow the next steps to recover them:</p>
+
+<p><details>
+  <summary>Click here if some taxonomic lineages are missing</summary></p>
+
+<h3 id="Retrieving.missing.taxonomic.lineages.from.NCBI">Retrieving missing taxonomic lineages from NCBI</h3>
+
+<h6 id="Building.an.API.query.with.all.missing.taxids.and.downloading.the.results.as.an.xml.file">Building an API query with all missing taxids and downloading the results as an xml file</h6>
+
+<pre><code class="markdown">awk -F '|' '$2=="" {print $0}' Taxids_taxonomic_lineages_linking_table &gt; Taxids_not_found
+
+url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&amp;rettype=xml&amp;id="
+url+=$(paste -s -d "," Taxids_not_found)
+
+curl $url &gt; Taxids_not_found.xml
+</code></pre>
+
+<h6 id="Extracting.the.nodes.of.interest.to.retrieve.missing.taxonomic.lineages">Extracting the nodes of interest to retrieve missing taxonomic lineages</h6>
+
+<pre><code class="markdown">paste \
+ &lt;(cat Taxids_not_found) \
+ &lt;(paste -d "," \
+   &lt;(xmllint --xpath "//TaxaSet/Taxon/TaxId/node()" Taxids_not_found.xml) \
+   &lt;(xmllint --xpath "//TaxaSet/Taxon/ScientificName/node()" Taxids_not_found.xml) \
+   &lt;(for i in $(cat Taxids_not_found);do paste -d "" &lt;(echo "ZZ") &lt;(xmllint --xpath "//TaxaSet/Taxon[./TaxId='$i']/LineageEx/Taxon[./Rank='kingdom']/ScientificName/node()" Taxids_not_found.xml);done | sed "s/ZZ//g") \
+   &lt;(for i in $(cat Taxids_not_found);do paste -d "" &lt;(echo "ZZ") &lt;(xmllint --xpath "//TaxaSet/Taxon[./TaxId='$i']/LineageEx/Taxon[./Rank='phylum']/ScientificName/node()" Taxids_not_found.xml);done | sed "s/ZZ//g") \
+   &lt;(for i in $(cat Taxids_not_found);do paste -d "" &lt;(echo "ZZ") &lt;(xmllint --xpath "//TaxaSet/Taxon[./TaxId='$i']/LineageEx/Taxon[./Rank='class']/ScientificName/node()" Taxids_not_found.xml);done | sed "s/ZZ//g") \
+   &lt;(for i in $(cat Taxids_not_found);do paste -d "" &lt;(echo "ZZ") &lt;(xmllint --xpath "//TaxaSet/Taxon[./TaxId='$i']/LineageEx/Taxon[./Rank='order']/ScientificName/node()" Taxids_not_found.xml);done | sed "s/ZZ//g") \
+   &lt;(for i in $(cat Taxids_not_found);do paste -d "" &lt;(echo "ZZ") &lt;(xmllint --xpath "//TaxaSet/Taxon[./TaxId='$i']/LineageEx/Taxon[./Rank='family']/ScientificName/node()" Taxids_not_found.xml);done | sed "s/ZZ//g") \
+   &lt;(for i in $(cat Taxids_not_found);do paste -d "" &lt;(echo "ZZ") &lt;(xmllint --xpath "//TaxaSet/Taxon[./TaxId='$i']/LineageEx/Taxon[./Rank='genus']/ScientificName/node()" Taxids_not_found.xml);done | sed "s/ZZ//g")) &gt; Missing_taxonomic_lineages
+</code></pre>
+
+<p><em>The &ldquo;ZZ&rdquo; pasting and further removal is a trick to force the addition of an empty field if the xmllint command does not find a node.</em></p>
+
+<h3 id="Reformatting.both.tables">Reformatting both tables</h3>
+
+<p>The main taxids/taxonomic lineages file can then be reformatted to match QIIME2 formatting requirements:</p>
+
+<pre><code class="markdown">paste \
+  &lt;(awk -F "|" '$2!="" {print $1}' Taxids_taxonomic_lineages_linking_table) \
+  &lt;(awk -F "|" 'BEGIN {OFS=""} $2!="" {print "k__",$9,"; p__",$8,"; c__",$7,"; o__",$6,"; f__",$5,"; g__",$4,"; s__",$2}' Taxids_taxonomic_lineages_linking_table) &gt; Taxids_taxonomic_lineages_linking_table_reformatted
+</code></pre>
+
+<p>&hellip;just like the one corresponding to missing taxonomic lineages:</p>
+
+<pre><code class="markdown">paste \
+  &lt;(awk -F '\t' '{print $1}' Missing_taxonomic_lineages) \
+  &lt;(awk -F '\t' '{print $2}' Missing_taxonomic_lineages | awk -F ',' 'BEGIN {OFS=""} {print "k__",$3,"; p__",$4,"; c__",$5,"; o__",$6,"; f__",$7,"; g__",$8,"; s__",$2}') &gt; Missing_taxonomic_lineages_reformatted
+</code></pre>
+
+<h3 id="Merging.both.files">Merging both files</h3>
+
+<pre><code class="markdown">cat Taxids_taxonomic_lineages_linking_table_reformatted Missing_taxonomic_lineages_reformatted &gt; Taxids_taxonomic_lineages_linking_table_merged
+</code></pre>
+
+<p>Removing genus names in species-rank annotations to match the structure of sequence data obtained via the RESCRIPt <a href="https://forum.qiime2.org/t/using-rescript-to-compile-sequence-databases-and-taxonomy-classifiers-from-ncbi-genbank/15947">get-ncbi-data method</a>:</p>
+
+<pre><code class="markdown">paste -d "" \
+  &lt;(awk -F 's__' '{OFS=""} {print $1,"s__"}' Taxids_taxonomic_lineages_linking_table_merged) \
+  &lt;(awk -F 's__' '{print $2}' Taxids_taxonomic_lineages_linking_table_merged | cut -d " " -f 2-) &gt; Taxids_taxonomic_lineages_linking_table_final
+</code></pre>
+
+<p></details></p>
+
+<p><a name="anchor6"></p>
+
+<h2 id="L4..Creating.a.global.table.gathering.accession.numbers..taxids..taxonomic.lineages.and.nucleotide.sequences">4. Creating a global table gathering accession numbers, taxids, taxonomic lineages and nucleotide sequences</h2>
+
+<p></a></p>
+
+<h6 id="Linking.every.accession.number.to.its.corresponding.taxonomic.lineage">Linking every accession number to its corresponding taxonomic lineage</h6>
+
+<p>Joining both tables and generating a re-ordered 3-columns tsv file:</p>
+
+<pre><code class="markdown">join -t $'\t' -1 2 -2 1 -a 1 \
+    &lt;(sort -t $'\t' -n -k 2 AccessionNumbers_taxids_linking_table_final) \
+    &lt;(sort -t $'\t' -n -k 1 Taxids_taxonomic_lineages_linking_table_final) | \
+    awk 'BEGIN {FS=OFS="\t"} {print $2, $1, $3}' &gt; AccessionNumbers_taxids_Taxonomic_lineages_linking_table
+</code></pre>
+
+<p>The global table can now be generated by adding to the previous file nucleotide sequences according to their accession numbers:</p>
+
+<pre><code class="markdown">join -t $'\t' -1 1 -2 1 -a 1 \
+      &lt;(sort -t $'\t' -k 1b,1 AccessionNumbers_taxids_Taxonomic_lineages_linking_table)\
+      &lt;(sort -t $'\t' -k 1b,1 AccessionNumbers_seqs_linking_table) &gt; Global_table
+</code></pre>
+
+<p>Optional check to make sure that every column of this table is complete:</p>
+
+<pre><code class="markdown">awk -F '\t' '{print $1}' Global_table | grep -c "^$"       # 0 =&gt; Ok
+awk -F '\t' '{print $2}' Global_table | grep -c "^$"       # 0 =&gt; Ok
+awk -F '\t' '{print $3}' Global_table | grep -c "^$"       # 0 =&gt; Ok
+awk -F '\t' '{print $4}' Global_table | grep -c "^$"       # 0 =&gt; Ok
+</code></pre>
+
+<h3 id="Cleaning.temporary.files.that.are.no.longer.useful">Cleaning temporary files that are no longer useful</h3>
+
+<pre><code class="markdown">rm AccessionNumbers_taxids_linking_table_final
+rm AccessionNumbers_taxids_Taxonomic_lineages_linking_table
+rm AccessionNumbers_seqs_linking_table
+rm Taxids_taxonomic_lineages_linking_table
+rm Taxids_taxonomic_lineages_linking_table_final
+rm Taxids_taxonomic_lineages_linking_table_reformatted
+rm Taxids_uniq
+
+# Only in the case where taxonomic lineages could not be retrieved all at once, these additional files were also generated and can now be removed:
+
+rm Missing_taxids
+rm Missing_taxonomic_lineages
+rm Missing_taxonomic_lineages_reformatted
+rm Taxids_not_found
+rm Taxids_taxonomic_lineages_linking_table_merged
+rm Taxids_not_found.xml
+</code></pre>
+
+<p><a name="anchor7"></p>
+
+<h2 id="L5..Creating.QIIME2-formatted.FASTA.and.taxonomic.lineages.files.and.importation.into.QIIME2">5. Creating QIIME2-formatted FASTA and taxonomic lineages files and importation into QIIME2</h2>
+
+<p></a></p>
+
+<p>Creation of the FASTA file:</p>
+
+<pre><code class="markdown">awk -F '\t' 'BEGIN {OFS=""} {print "&gt;",$1,"\n",$4}' Global_table | sed 's/-//g' &gt; Fasta_file
+</code></pre>
+
+<p>Creation of the taxonomic lineages file:</p>
+
+<pre><code class="markdown">awk 'BEGIN {FS=OFS="\t"} {print $1,$3}' Global_table &gt; Taxonomic_lineages
+</code></pre>
+
+<p>Importing sequences into QIIME2:</p>
+
+<pre><code class="markdown">qiime tools import \
+  --type 'FeatureData[Sequence]' \
+  --input-path Fasta_file \
+  --output-path Fasta_file.qza
+</code></pre>
+
+<p><a name="anchor8"></p>
+
+<h2 id="L6..Removing.low-quality.sequences">6. Removing low-quality sequences</h2>
+
+<p></a></p>
+
+<p>The <a href="https://github.com/bokulich-lab/RESCRIPt">RESCRIPt</a> QIIME2 plugin is used to discard low-quality sequences, i.e. those displaying ≥ 5 degenerate bases or containing a homopolymer sequence of ≥ 12 nucleotides:</p>
+
+<pre><code class="markdown">qiime rescript cull-seqs \
+    --i-sequences Fasta_file.qza \
+    --p-homopolymer-length 12 \
+    --p-n-jobs 46 \
+    --o-clean-sequences Fasta_file_tmp.qza
+
+mv Fasta_file_tmp.qza Fasta_file.qza
+
+qiime tools export \
+  --input-path Fasta_file.qza \
+  --output-path .
+</code></pre>
+
+<p><em>The &ldquo;&ndash;p-n-jobs&rdquo; option must be set according to the number of threads available on the computer carrying out the analysis.</em></p>
+
+<p>Corresponding entries must also be removed from the taxonomy file:</p>
+
+<pre><code class="markdown">fgrep -v -f \
+  &lt;(cat \
+    &lt;(grep "&gt;" dna-sequences.fasta | cut -d "&gt;" -f 2) \
+    &lt;(cut -d $'\t' -f 1 Taxonomic_lineages) | sort | uniq -u) \
+  Taxonomic_lineages &gt; Taxonomic_lineages_tmp
+
+mv Taxonomic_lineages_tmp Taxonomic_lineages
+
+qiime tools import \
+  --type 'FeatureData[Taxonomy]' \
+  --input-format HeaderlessTSVTaxonomyFormat \
+  --input-path Taxonomic_lineages \
+  --output-path Taxonomic_lineages.qza
+</code></pre>
+
+<p><a name="anchor9"></p>
+
+<h2 id="L7..Dereplicating.sequences..Optional.">7. Dereplicating sequences [Optional]</h2>
+
+<p></a></p>
+
+<p>RESCRIPt can then be used to remove redundant sequence data. As the relevance of such dereplication depends on several factors including the barcode of interest, the choice is left to the user to include it or not in the workflow.</p>
+
+<pre><code class="markdown">qiime rescript dereplicate \
+    --i-sequences Fasta_file.qza \
+    --i-taxa Taxonomic_lineages.qza \
+    --p-mode 'uniq' \
+    --p-threads 46 \
+    --o-dereplicated-sequences Fasta_file_tmp.qza \
+    --o-dereplicated-taxa Taxonomic_lineages_tmp.qza
+
+mv Fasta_file_tmp.qza Fasta_file.qza
+mv Taxonomic_lineages_tmp.qza Taxonomic_lineages.qza
+</code></pre>
+
+<p><em>The &ldquo;&ndash;p-threads&rdquo; option must be set according to the number of threads available on the computer carrying out the analysis.</em></p>
+
+<p><a name="anchor10"></p>
+
+<h2 id="L8..Filtering.out.suspected.fungal.sequences">8. Filtering out suspected fungal sequences</h2>
+
+<p></a></p>
+
+<p>Sequence and taxonomy data must first be extracted from qza files:</p>
+
+<pre><code class="markdown">qiime tools export \
+  --input-path Fasta_file.qza \
+  --output-path . &amp;&amp; mv dna-sequences.fasta Exported_fasta_file.fasta
+
+qiime tools export \
+  --input-path Taxonomic_lineages.qza \
+  --output-path . &amp;&amp; awk 'NR&gt;1' taxonomy.tsv &gt; Exported_taxonomic_lineages.tsv
+</code></pre>
+
+<p>These plant ITS2 sequences will then be blasted against two different fungi databases (i.e. fungi genomic RefSeqs and fungi ITS sequences from UNITE database) in order to identify sequences suspected to have a fungal origin.</p>
+
+<p>The following procedure shows how to format these two fungi datasets so that they are compatible with the local BLAST command line applications:</p>
+
+<p><details>
+  <summary>Click here to develop a local BLAST database from fungi genomic RefSeq dataset</summary></p>
+
+<h3 id="Downloading.fungi.genomic.RefSeqs">Downloading fungi genomic RefSeqs</h3>
+
+<pre><code class="markdown">for i in $(curl -l ftp://ftp.ncbi.nlm.nih.gov/refseq/release/fungi/ | grep "genomic.fna");do wget https://ftp.ncbi.nlm.nih.gov/refseq/release/fungi/$i;done
+</code></pre>
+
+<h3 id="Concatenating.individual.files.into.a.single.one">Concatenating individual files into a single one</h3>
+
+<pre><code class="markdown">gzip -d *.gz
+
+cat *fna &gt; fungi_genomic_refseqs.fna
+</code></pre>
+
+<h3 id="Retrieving.taxids">Retrieving taxids</h3>
+
+<pre><code class="markdown">grep "&gt;" fungi_genomic_refseqs.fna | cut -d "&gt;" -f 2 | cut -d " " -f 1 &gt; AccessionNumbers
+
+fgrep -w -f AccessionNumbers nucl_gb.accession2taxid &gt; AccessionNumbers_taxids_linking_table
+</code></pre>
+
+<h4 id="Retrieving.missing.taxids">Retrieving missing taxids</h4>
+
+<pre><code class="markdown">awk -F '\t' '{print $2}' AccessionNumbers_taxids_linking_table &gt; AccessionNumbers_found_in_accession2taxid
+
+cat AccessionNumbers AccessionNumbers_found_in_accession2taxid | sort | uniq -u &gt; AccessionNumbers_not_found
+</code></pre>
+
+<h5 id="Building.one.API.query.with.all.missing.accession.numbers.and.downloading.the.results.as.an.xml.file">Building one API query with all missing accession numbers and downloading the results as an xml file</h5>
+
+<pre><code class="markdown">url="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;rettype=fasta&amp;retmode=xml&amp;id="
+url+=$(paste -s -d "," AccessionNumbers_not_found)
+
+curl $url &gt; AccessionNumbers_not_found.xml
+</code></pre>
+
+<h5 id="Extracting.the.nodes.of.interest.from.the.xml.file">Extracting the nodes of interest from the xml file</h5>
+
+<pre><code class="markdown">paste \
+ &lt;(xmllint --xpath '//TSeq_accver/node()' AccessionNumbers_not_found.xml) \
+ &lt;(xmllint --xpath '//TSeq_taxid/node()' AccessionNumbers_not_found.xml) &gt; Missing_taxids
+</code></pre>
+
+<h4 id="Merging.both.files.in.a.single.accession.numbers.taxids.linking.table">Merging both files in a single accession numbers/taxids linking table</h4>
+
+<pre><code class="markdown">awk 'BEGIN {FS=OFS="\t"} {print $2,$3}' AccessionNumbers_taxids_linking_table &gt; AccessionNumbers_taxids_linking_table_extracted
+
+cat AccessionNumbers_taxids_linking_table_extracted Missing_taxids &gt; AccessionNumbers_taxids_linking_table_final
+</code></pre>
+
+<h3 id="Creating.a.local.BLAST.database.from.fungi.genomic.RefSeqs">Creating a local BLAST database from fungi genomic RefSeqs</h3>
+
+<pre><code class="markdown">makeblastdb \
+  -in fungi_genomic_refseqs.fna \
+  -parse_seqids \
+  -blastdb_version 5 \
+  -taxid_map AccessionNumbers_taxids_linking_table_final \
+  -title "fungi_genomic_refseqs" \
+  -dbtype nucl
+</code></pre>
+
+<p></details></p>
+
+<p><details>
+  <summary>Click here to develop a local BLAST database from fungi UNITE sequence dataset</summary></p>
+
+<p>ITS sequences must first be manually downloaded from the <a href="https://doi.org/10.15156/BIO/1280049">UNITE website</a>.</p>
+
+<h3 id="Reformatting.fasta.file">Reformatting fasta file</h3>
+
+<p>The description line of the fasta file must be shortened to match requirements of BLAST command line applications:</p>
+
+<pre><code class="markdown">paste \
+  &lt;(grep "&gt;" sh_general_release_dynamic_10.05.2021.fasta | cut -d "|" -f 2) \
+  &lt;(sed '/^&gt;/d' sh_general_release_dynamic_10.05.2021.fasta) &gt; AccessionNumbers_seqs_linking_table
+
+awk -F '\t' 'BEGIN {OFS=""} {print "&gt;",$1,"\n",$2}' AccessionNumbers_seqs_linking_table &gt; UNITE_fungi_seqs.fasta
+</code></pre>
+
+<h3 id="Creating.a.local.BLAST.database.from.UNITE.ITS.sequences">Creating a local BLAST database from UNITE ITS sequences</h3>
+
+<pre><code class="markdown">makeblastdb \
+  -in UNITE_fungi_seqs.fasta \
+  -parse_seqids \
+  -blastdb_version 5 \
+  -title "UNITE_fungi_seqs" \
+  -dbtype nucl
+</code></pre>
+
+<p></details></p>
+
+<h3 id="Using.fungi.genomic.RefSeqs">Using fungi genomic RefSeqs</h3>
+
+<h4 id="Blasting.plant.ITS2.sequences.against.fungi.genomic.RefSeqs">Blasting plant ITS2 sequences against fungi genomic RefSeqs</h4>
+
+<pre><code class="markdown">blastn \
+  -db fungi_genomic_refseqs.fna \
+  -query Exported_fasta_file.fasta \
+  -num_threads 46 \
+  -max_target_seqs 1 \
+  -outfmt "6 qacc sacc evalue bitscore length pident ssciname scomname staxid" \
+  -out blastn_outfile_fungi_genomic_refseqs
+</code></pre>
+
+<p><em>The &ldquo;-num_threads&rdquo; option must be set according to the number of threads available on the computer carrying out the analysis.</em></p>
+
+<h4 id="Reformatting.this.output.file.and.adding.length.data.for.each.plant.reference.sequence">Reformatting this output file and adding length data for each plant reference sequence</h4>
+
+<pre><code class="markdown">sort -buk 1,1 blastn_outfile_fungi_genomic_refseqs | sed "s/100.000/100/g" &gt; blastn_outfile_fungi_genomic_refseqs_uniq
+
+awk -F '\t' '{print $1}' blastn_outfile_fungi_genomic_refseqs_uniq &gt; AccessionNumbers_in_blastn_outfile
+
+paste \
+  &lt;(cat AccessionNumbers_in_blastn_outfile) \
+  &lt;(fgrep -w -f AccessionNumbers_in_blastn_outfile Global_table | awk -F '\t' '{print length($4)*0.95}' | cut -d ',' -f 1) &gt; AccessionNumbers_seqs_length_linking_table
+
+join -t $'\t' -1 1 -2 1 -a 1 \
+      &lt;(sort -t $'\t' -k 1b,1 blastn_outfile_fungi_genomic_refseqs_uniq)\
+      &lt;(sort -t $'\t' -k 1b,1 AccessionNumbers_seqs_length_linking_table) &gt; blastn_outfile_fungi_genomic_refseqs_uniq_withlengthdata
+</code></pre>
+
+<h4 id="Removing.sequences.showing.at.least.90..identity.with.fungi.genomic.RefSeqs.on.at.least.95..of.their.length">Removing sequences showing at least 90% identity with fungi genomic RefSeqs on at least 95% of their length</h4>
+
+<pre><code class="markdown">awk -F '\t' '$6&gt;=90' blastn_outfile_fungi_genomic_refseqs_uniq_withlengthdata | awk -F '\t' '$5&gt;=$NF' | awk -F '\t' '{print $1}' &gt; Sequences_to_remove_fungi_genomic_refseqs
+</code></pre>
+
+<h3 id="Using.UNITE.ITS.sequences">Using UNITE ITS sequences</h3>
+
+<h4 id="Blasting.plant.ITS2.sequences.against.UNITE.fungi.database">Blasting plant ITS2 sequences against UNITE fungi database</h4>
+
+<pre><code class="markdown">blastn \
+  -db UNITE_fungi_seqs.fasta \
+  -query Exported_fasta_file.fasta \
+  -num_threads 46 \
+  -max_target_seqs 1 \
+  -outfmt "6 qacc sacc evalue bitscore length pident ssciname scomname staxid" \
+  -out blastn_outfile_UNITE_fungi
+</code></pre>
+
+<p><em>The &ldquo;-num_threads&rdquo; option must be set according to the number of threads available on the computer carrying out the analysis.</em></p>
+
+<h4 id="Reformatting.this.output.file.and.adding.length.data.for.each.plant.reference.sequence">Reformatting this output file and adding length data for each plant reference sequence</h4>
+
+<pre><code class="markdown">sort -buk 1,1 blastn_outfile_UNITE_fungi | sed "s/100.000/100/g" &gt; blastn_outfile_UNITE_fungi_uniq
+
+awk -F '\t' '{print $1}' blastn_outfile_UNITE_fungi_uniq &gt; AccessionNumbers_in_blastn_outfile
+
+paste \
+  &lt;(cat AccessionNumbers_in_blastn_outfile) \
+  &lt;(fgrep -w -f AccessionNumbers_in_blastn_outfile Global_table | awk -F '\t' '{print length($4)*0.95}' | cut -d ',' -f 1) &gt; AccessionNumbers_seqs_length_linking_table
+
+join -t $'\t' -1 1 -2 1 -a 1 \
+      &lt;(sort -t $'\t' -k 1b,1 blastn_outfile_UNITE_fungi_uniq)\
+      &lt;(sort -t $'\t' -k 1b,1 AccessionNumbers_seqs_length_linking_table) &gt; blastn_outfile_UNITE_fungi_uniq_withlengthdata
+</code></pre>
+
+<h4 id="Removing.sequences.showing.at.least.90..identity.with.UNITE.ITS.sequences.on.at.least.95..of.their.length">Removing sequences showing at least 90% identity with UNITE ITS sequences on at least 95% of their length</h4>
+
+<pre><code class="markdown">awk -F '\t' '$6&gt;=90' blastn_outfile_UNITE_fungi_uniq_withlengthdata | awk -F '\t' '$5&gt;=$NF' | awk -F '\t' '{print $1}' &gt; Sequences_to_remove_UNITE_seqs
+</code></pre>
+
+<h3 id="Filtering.out.suspected.fungal.sequences.from.ITS2.reference.sequences">Filtering out suspected fungal sequences from ITS2 reference sequences</h3>
+
+<p>The suspected fungal sequences highlighted using both fungi databases are first merged into a single accession list:</p>
+
+<pre><code class="markdown">cat Sequences_to_remove_fungi_genomic_refseqs Sequences_to_remove_UNITE_seqs | sort | uniq &gt; Sequences_to_remove
+</code></pre>
+
+<p>These sequences can then be removed from plant sequence and taxonomy files:</p>
+
+<pre><code class="markdown">grep -n -A 1 -f Sequences_to_remove Exported_fasta_file.fasta | \
+sed -n 's/^\([0-9]\{1,\}\).*/\1d/p' | \
+sed -f - Exported_fasta_file.fasta &gt; Fasta_file_without_fungi
+
+grep -v -f Sequences_to_remove Exported_taxonomic_lineages.tsv &gt; Taxonomic_lineages_without_fungi
+</code></pre>
+
+<p><a name="anchor11"></p>
+
+<h2 id="L9..Filtering.out.suspected.misidentified.sequences">9. Filtering out suspected misidentified sequences</h2>
+
+<p></a></p>
+
+<h3 id="Carrying.out.leaked.cross-validation">Carrying out leaked cross-validation</h3>
+
+<p>To identify sequences with a wrong identification, plant ITS2 reference sequences are analyzed in a cross-validation scheme with data leakage, i.e. where sets of test and training sequences are strictly identical. This allows comparing expected and predicted taxonomies for each sequence and discarding those for which the expected taxonomy at the family rank is observed only once in the top 5 hits resulting from the blastn analysis.</p>
+
+<p>The first step is to format the plant ITS2 sequence dataset to be compatible with the local BLAST command line applications:</p>
+
+<p><details>
+  <summary>Click here to format the plant ITS2 sequence dataset into a local BLAST database</summary></p>
+
+<h4 id="Creating.a.table.linking.accession.numbers.to.taxids.from.filtered.fasta.file">Creating a table linking accession numbers to taxids from filtered fasta file</h4>
+
+<pre><code class="markdown">grep "&gt;" Fasta_file_without_fungi | cut -d "&gt;" -f 2 &gt; AccessionNumbers
+
+fgrep -f AccessionNumbers Global_table | awk 'BEGIN {FS=OFS="\t"} {print $1,$2}' &gt; AccessionNumbers_taxids_linking_table
+</code></pre>
+
+<h4 id="Generating.the.BLAST.database">Generating the BLAST database</h4>
+
+<pre><code class="markdown">makeblastdb \
+  -in Fasta_file_without_fungi \
+  -parse_seqids \
+  -blastdb_version 5 \
+  -taxid_map AccessionNumbers_taxids_linking_table \
+  -title "Fasta_file_without_fungi" \
+  -dbtype nucl
+</code></pre>
+
+<p></details></p>
+
+<p>Plant ITS2 sequences can then be blasted against themeselves:</p>
+
+<pre><code class="markdown">blastn \
+  -db ./Fasta_file_without_fungi \
+  -query Fasta_file_without_fungi \
+  -num_threads 46 \
+  -max_target_seqs 5 \
+  -outfmt "6 qacc sacc evalue bitscore length pident ssciname scomname staxid" \
+  -out blastn_outfile_leakedCV
+</code></pre>
+
+<p><em>The &ldquo;-num_threads&rdquo; option must be set according to the number of threads available on the computer carrying out the analysis.</em></p>
+
+<h3 id="Processing.leaked.CV.results.to.compare.expected.to.predicted.taxonomies">Processing leaked CV results to compare expected to predicted taxonomies</h3>
+
+<h4 id="Extracting.results.for.the.top.5.matches">Extracting results for the top 5 matches</h4>
+
+<p>First, information related to sequence accession numbers and taxids of top 5 hits is retrieved:</p>
+
+<pre><code class="markdown">awk -F '\t' '{print $1}' blastn_outfile_leakedCV | sort | uniq &gt; AccessionNumbers_in_blastn_outfile
+
+awk 'BEGIN {FS=OFS="\t"} {print $1,$9}' blastn_outfile_leakedCV &gt; AccessionNumbers_PredictedTaxids_linking_table
+</code></pre>
+
+<p>These files are then used to keep only the top 5 hits for each reference sequence:</p>
+
+<pre><code class="markdown">awk 'seen[$1]++{ $1="" }1' OFS='\t' AccessionNumbers_PredictedTaxids_linking_table \
+  | fgrep -w -A 4 -f AccessionNumbers_in_blastn_outfile \
+  | sed '/--/d' &gt; AccessionNumbers_PredictedTaxids_linking_table_top5
+
+paste \
+  &lt;(awk -F '\t' '{print $1}' AccessionNumbers_PredictedTaxids_linking_table_top5 | awk 'BEGIN {FS=OFS="\t"} NF {p = $0} {print p}') \
+  &lt;(awk -F '\t' 'BEGIN {FS=OFS="\t"} {print $2}' AccessionNumbers_PredictedTaxids_linking_table_top5) &gt; AccessionNumbers_PredictedTaxids_linking_table_top5_tmp &amp;&amp; mv AccessionNumbers_PredictedTaxids_linking_table_top5_tmp AccessionNumbers_PredictedTaxids_linking_table_top5
+</code></pre>
+
+<p><em>Despite the &lsquo;-max_target_seqs&rsquo; parameter set to 5 during the blastn analysis, this step is useful to keep only the five best matches since blastn results can display more than 5 hits in case of ties.</em></p>
+
+<p>Lines must then be numbered to allow further data processing:</p>
+
+<pre><code class="markdown">awk 'BEGIN {FS=OFS="\t"} {print NR,$0}' AccessionNumbers_PredictedTaxids_linking_table_top5 &gt; AccessionNumbers_PredictedTaxids_linking_table_top5_tmp &amp;&amp; mv AccessionNumbers_PredictedTaxids_linking_table_top5_tmp AccessionNumbers_PredictedTaxids_linking_table_top5
+</code></pre>
+
+<h4 id="Adding.taxonomies.of.the.top.5.matches.at.the.family.rank">Adding taxonomies of the top 5 matches at the family rank</h4>
+
+<p>New linking tables displaying taxonomy information at the family rank must first be generated:</p>
+
+<pre><code class="markdown">paste \
+  &lt;(awk 'BEGIN {FS=OFS="\t"} {print $1}' Global_table) \
+  &lt;(awk 'BEGIN {FS=OFS="\t"} {print $3}' Global_table | awk -F '; ' '{print $5}') &gt; AccessionNumbers_taxonomic_lineages_linking_table
+
+paste \
+  &lt;(awk 'BEGIN {FS=OFS="\t"} {print $2}' Global_table) \
+  &lt;(awk 'BEGIN {FS=OFS="\t"} {print $3}' Global_table | awk -F '; ' '{print $5}') | sort -buk 1,1 &gt; Taxids_taxonomic_lineages_linking_table
+</code></pre>
+
+<p>Predicted taxonomies are then added to the working table:</p>
+
+<pre><code class="markdown">LC_ALL=C join -t $'\t' -1 3 -2 1 -a 1 \
+  &lt;(LC_ALL=C sort -t $'\t' -k 3 AccessionNumbers_PredictedTaxids_linking_table_top5) \
+  &lt;(LC_ALL=C sort -t $'\t' -k 1 Taxids_taxonomic_lineages_linking_table) &gt; AccessionNumbers_PredictedTaxids_linking_table_top5_tmp &amp;&amp; mv AccessionNumbers_PredictedTaxids_linking_table_top5_tmp AccessionNumbers_PredictedTaxids_linking_table_top5
+</code></pre>
+
+<p>This table must then be reformatted so that it can then welcome expected taxonomies:</p>
+
+<pre><code class="markdown">sort -n -k 2 AccessionNumbers_PredictedTaxids_linking_table_top5 | awk 'BEGIN {FS=OFS="\t"} {print $3,$4}' &gt; AccessionNumbers_PredictedTaxids_linking_table_top5_tmp &amp;&amp; mv AccessionNumbers_PredictedTaxids_linking_table_top5_tmp AccessionNumbers_PredictedTaxids_linking_table_top5
+
+awk 'BEGIN {FS=OFS="\t"} $1 != prev { printf "%s%s", ors, $1; prev=$1; ors=ORS } { printf " %s", $2 } END { print "" }' AccessionNumbers_PredictedTaxids_linking_table_top5 | sed "s/ /\t/g" &gt; AccessionNumbers_PredictedTaxids_linking_table_top5_tmp &amp;&amp; mv AccessionNumbers_PredictedTaxids_linking_table_top5_tmp AccessionNumbers_PredictedTaxids_linking_table_top5
+</code></pre>
+
+<h3 id="Adding.expected.taxonomy">Adding expected taxonomy</h3>
+
+<pre><code class="markdown">join -t $'\t' -1 1 -2 1 -a 1 \
+  &lt;(sort -t $'\t' -k 1 AccessionNumbers_PredictedTaxids_linking_table_top5) \
+  &lt;(sort -t $'\t' -k 1 AccessionNumbers_taxonomic_lineages_linking_table) -o 1.1,2.2,1.2,1.3,1.4,1.5,1.6 &gt; AccessionNumbers_PredictedTaxids_linking_table_top5_tmp &amp;&amp; mv AccessionNumbers_PredictedTaxids_linking_table_top5_tmp AccessionNumbers_PredictedTaxids_linking_table_top5
+</code></pre>
+
+<h3 id="Counting.the.number.of.times.the.expected.family.is.observed.in.the.taxonomy.of.the.top.5.hits">Counting the number of times the expected family is observed in the taxonomy of the top 5 hits</h3>
+
+<pre><code class="markdown">awk 'BEGIN {FS=OFS="\t"} { i=$1; $1=""; print i, gsub($2,"")-1 }' AccessionNumbers_PredictedTaxids_linking_table_top5 &gt; Predicted_taxonomy_count
+</code></pre>
+
+<h3 id="Removing.sequences.for.which.the.expected.family.is.observed.only.once.in.the.taxonomy.of.the.top.5.hits">Removing sequences for which the expected family is observed only once in the taxonomy of the top 5 hits</h3>
+
+<pre><code class="markdown">awk 'BEGIN {FS=OFS="\t"} $2==1 {print $1}' Predicted_taxonomy_count &gt; Sequences_to_remove
+
+grep -n -A 1 -f Sequences_to_remove Fasta_file_without_fungi | \
+sed -n 's/^\([0-9]\{1,\}\).*/\1d/p' | \
+sed -f - Fasta_file_without_fungi &gt; NCBI_ITS2_Viridiplantae_fasta_file_2021_08_09.fasta
+
+grep -v -f Sequences_to_remove Taxonomic_lineages_without_fungi &gt; NCBI_ITS2_Viridiplantae_taxonomic_lineages_2021_08_09.tsv
+</code></pre>
+
+<h3 id="Cleaning.temporary.files.that.are.no.longer.useful">Cleaning temporary files that are no longer useful</h3>
+
+<pre><code class="markdown">rm Exported_*
+rm blastn_outfile_*
+rm AccessionNumbers*
+rm Sequences_to_remove*
+rm Fasta_file_without_fungi
+rm Taxonomic_lineages_without_fungi
+rm Taxids_taxonomic_lineages_linking_table
+rm Predicted_taxonomy_count
+
+# If a local BLAST database was developed from fungi genomic RefSeq dataset, the following files can also be removed:
+
+rm fungi_genomic_refseqs.fna
+rm Missing_taxids
+
+# If a local BLAST database was developed from fungi UNITE sequence dataset, the following files can also be removed:
+
+rm sh_general_release_dynamic_10.05.2021.fasta
+rm UNITE_fungi_seqs.fasta 
+</code></pre>
+
+<h3 id="Importing.data.into.QIIME2">Importing data into QIIME2</h3>
+
+<pre><code class="markdown">qiime tools import \
+  --type 'FeatureData[Sequence]' \
+  --input-path NCBI_ITS2_Viridiplantae_fasta_file_2021_08_09.fasta \
+  --output-path NCBI_ITS2_Viridiplantae_fasta_file_2021_08_09.qza
+
+qiime tools import \
+  --type 'FeatureData[Taxonomy]' \
+  --input-format HeaderlessTSVTaxonomyFormat \
+  --input-path NCBI_ITS2_Viridiplantae_taxonomic_lineages_2021_08_09.tsv \
+  --output-path NCBI_ITS2_Viridiplantae_taxonomic_lineages_2021_08_09.qza
+</code></pre>
+
+<p>These two files can be directly used in QIIME2 as reference files to assign taxonomy to query sequences using the <a href="https://docs.qiime2.org/2021.2/plugins/available/feature-classifier/classify-consensus-blast/">BLAST+ consensus classifier</a> or the <a href="https://docs.qiime2.org/2021.2/plugins/available/feature-classifier/classify-consensus-vsearch/">VSEARCH-based consensus classifier</a>.</p>
+
+<p>If the <a href="https://docs.qiime2.org/2021.2/plugins/available/feature-classifier/classify-sklearn/">sklearn-based Naive Bayes</a> approach is preferred to assign taxonomy, the classifier must be pre-trained:</p>
+
+<pre><code class="markdown">qiime feature-classifier fit-classifier-naive-bayes \
+  --i-reference-reads NCBI_ITS2_Viridiplantae_fasta_file_2021_08_09.qza \
+  --i-reference-taxonomy NCBI_ITS2_Viridiplantae_taxonomic_lineages_2021_08_09.qza \
+  --o-classifier NCBI_ITS2_Viridiplantae_classifier_2021_08_09.qza
+</code></pre>
+
+<p><a name="anchor12"></p>
+
+<h2 id="L10..Extracting.the.region.of.reference.sequences.that.was.sequenced..Optional.">10. Extracting the region of reference sequences that was sequenced [Optional]</h2>
+
+<p></a></p>
+
+<p>It has been shown that restricting reference sequences to only the portion sequenced can improve the taxonomic classification accuracy for some barcode sequences. The choice is left to the user to include this step or not in the database processing workflow, according to its applications.</p>
+
+<p>As an example, an amplicon restriction of the developed ITS2 database is carried out below with one of the primer sets commonly used in our lab for metabarcoding purposes (a variation of the ITS2F/ITS4R primer set).</p>
+
+<h3 id="Sequence.extraction">Sequence extraction</h3>
+
+<p>The sequence of forward and reverse primers is used to extract the region of reference sequences that was sequenced:</p>
+
+<pre><code class="markdown">qiime feature-classifier extract-reads \
+    --i-sequences NCBI_ITS2_Viridiplantae_fasta_file_2021_08_09.qza \
+    --p-f-primer ATGCGATACBTRGTGTGAAT \
+    --p-r-primer TCCTCCGCTTATTGATATGC \
+    --p-n-jobs 46 \
+    --o-reads NCBI_ITS2_Viridiplantae_fasta_file_extracted_2021_08_09.qza
+</code></pre>
+
+<p><em>The &ldquo;&ndash;p-n-jobs&rdquo; parameter must be set according to the number of threads available on the computer carrying out the analysis.</em></p>
+
+<p>These extracted sequences can be directly used together with the <code>NCBI_ITS2_Viridiplantae_taxonomic_lineages_2021_08_09.qza</code> file in QIIME2 as reference files to assign taxonomy to query sequences using the <a href="https://docs.qiime2.org/2021.2/plugins/available/feature-classifier/classify-consensus-blast/">BLAST+ consensus classifier</a> or the <a href="https://docs.qiime2.org/2021.2/plugins/available/feature-classifier/classify-consensus-vsearch/">VSEARCH-based consensus classifier</a>.</p>
+
+<p>If the <a href="https://docs.qiime2.org/2021.2/plugins/available/feature-classifier/classify-sklearn/">sklearn-based Naive Bayes</a> approach is preferred to assign taxonomy, the classifier must be pre-trained:</p>
+
+<pre><code class="markdown">qiime feature-classifier fit-classifier-naive-bayes \
+  --i-reference-reads NCBI_ITS2_Viridiplantae_fasta_file_extracted_2021_08_09.qza \
+  --i-reference-taxonomy NCBI_ITS2_Viridiplantae_taxonomic_lineages_2021_08_09.qza \
+  --o-classifier NCBI_ITS2_Viridiplantae_classifier_extracted_2021_08_09.qza
+</code></pre>
+</body>
+</html>
