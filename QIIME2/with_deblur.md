@@ -4,6 +4,17 @@ Program for 2023.2 version can be found here: https://docs.qiime2.org/2023.2/ins
 Tutorial for usage deblur: https://docs.qiime2.org/2023.2/tutorials/read-joining/
 
 NB: When we want to use deblur as denoising plugin, we have to mrerge demox sequnces before denoising, while dada2 makes this step automatically. So if you plan to use deblur or OTU clustering methods next, join your sequences now. 
+______________________________________________________________________________________________________________________________________________________________-
+Theory about differences of ways: OTU-clastering (used by DADA2), ASV-way (used bt deblur).
+**OTU (Operational Taxonomic Units):**
+Think of OTUs as groups of sequences that are similar to each other. It's like putting similar-looking items together in a box.
+In bioinformatics, sequences are often grouped into OTUs based on a similarity threshold. If two sequences are similar above a certain threshold (usually around 97% similarity for microbial sequences), they're put into the same OTU. OTUs are like broad categories. They represent groups of sequences that are likely to come from the same type of organism, but they don't necessarily capture all the genetic variation within those organisms.
+**ASV (Amplicon Sequence Variants):**
+ASVs are more like individual entities. Each ASV represents a unique sequence in the dataset, without grouping similar sequences together.
+Instead of putting similar sequences in the same box (like with OTUs), ASVs give each sequence its own box. So, if there are slight differences between sequences, each difference gets its own box (ASV). ASVs are more precise than OTUs because they don't group sequences together based on similarity. Each ASV represents a distinct genetic variant in the dataset.
+In simple terms, OTUs are like grouping similar-looking things together in a big box, while ASVs are like giving each unique thing its own separate box, even if they look very similar. OTUs give a broader picture, while ASVs give a more detailed and precise view of the genetic diversity in the dataset.
+_______________________________________________________________________________________________________________________________________________________________
+
 
 ### Step1. Activate env
 conda activate qiime2-2023.2
@@ -58,7 +69,9 @@ qiime taxa barplot --i-table deblur-rarefied/deblur_otus_rar_5K.qza --i-taxonomy
 картинка 
  ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/c4a7b887-28e6-4446-9932-36a19a569037)
 
-В общем всё хорошо, немного поменялось распеределение на некоторых образцах, но самое заметное - deblur ни в каком виде, прям наотрез отказался кушать и отбрабатывать те файлы с данными плохого качесвта. Прям никак. они отфильтровываются как ни крути. 
+В общем всё хорошо, немного поменялось распеределение на некоторых образцах, но самое заметное - deblur ни в каком виде, прям наотрез отказался кушать и отбрабатывать те файлы с данными плохого качества. Прям никак. они отфильтровываются как ни крути. Не знаю, может это связано со спецификой подхода ASV, против OTU-кластеров, которые использует DADA2. Чт в случае deblur эти низкокачественные последовательности не объединяются с хорошими не определяются с ними "под одну гребёнку", а просто отфильтровываются, потому что сами по себе они никуда не могут отнестись. 
+
+
 
 
 
