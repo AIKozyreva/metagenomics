@@ -9,8 +9,9 @@ Data for analysis two variants: train_data from lesson + human gut metagenome (P
 
 Data for program: https://drive.google.com/drive/folders/1XygG6Hcd-nAY-wD-Wb4uwZZdJjgMVsbw 
 _________________________________________________________________________________________________________________________________________________
+### HUMAnN
+Also need: diamond + metaphlan 
 
-### HUMANN
 
 _________________________________________________________________________________________________________________________________________________
 ### PiCRUST 
