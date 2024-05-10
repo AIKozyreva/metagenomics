@@ -12,10 +12,10 @@ conda activate qiime2-2023.2
 qiime --help
 ```
 ### Step2. Import and demultiplex your data
-This step was widely described in README.md of this repo
+This step was widely described in QIIME2/basic_usage.md of this repo
 
 ### Step3. Denoising data with DADA2.
-This step was widely described in README.md of this repo
+This step was widely described in QIIME2/basic_usage.md of this repo
 
 ### Step4. using pre-trained Naive-bayes classifiers
 Taxonomic classifiers perform best when they are trained based on your specific sample preparation and sequencing parameters, including the primers that were used for amplification and the length of your sequence reads.
