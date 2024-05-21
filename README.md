@@ -5,7 +5,7 @@ ITMO_Master_Course
 Version QIIME2: 2023.2 
 Program for 2023.2 version can be found here: https://docs.qiime2.org/2023.2/install/native/#install-qiime-2-within-a-conda-environment 
 
-Data for analysis two variants: train_data from lesson + human gut metagenome (PRJNA1087311), human skin surface metagenome (SRR26268659) 
+Data for analysis two variants: human gut metagenome (  )
 
 Data for program: https://drive.google.com/drive/folders/1XygG6Hcd-nAY-wD-Wb4uwZZdJjgMVsbw 
 _________________________________________________________________________________________________________________________________________________
