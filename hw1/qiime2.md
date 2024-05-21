@@ -1,6 +1,6 @@
 ### Analysis of Illumina MiSeq data
 
-Data for analysis two variants: human gut metagenome (mmm)
+Data for analysis two variants: human gut metagenome (SRP506441: SRR28962951-55)
 
 *deblur takes as input fastq files one by one, dada2 takes as input only the whole bunch of sequenced content per run of sequencing machine, because dada2 algorithm uses the distribution of errors model defined by all reads from this run.
 
