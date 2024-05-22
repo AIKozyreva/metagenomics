@@ -10,7 +10,9 @@ Data for analysis two variants: human gut metagenome 16S (SRP506441: SRR28962951
 Data for program: https://drive.google.com/drive/folders/1XygG6Hcd-nAY-wD-Wb4uwZZdJjgMVsbw 
 
 >DADA2 learning - folder QIIME2
+>
 >Deblur learning - folder hw1
+>
 _________________________________________________________________________________________________________________________________________________
 ### HUMAnN
 Also need: diamond + metaphlan 
