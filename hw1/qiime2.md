@@ -143,8 +143,28 @@ ________________________________________________________________________________
 
 ```
 mkdir GGrarefied
-qiime feature-table rarefy --i-table "denoising/feature_table.qza" --p-sampling-depth 10000 --o-rarefied-table "GGrarefied/GGotus_rar_5K.qza"
+qiime feature-table rarefy --i-table "denoising/deblur-table.qza" --p-sampling-depth 10000 --o-rarefied-table "GGrarefied/GGotus_rar_5K.qza"
 qiime diversity alpha --i-table "GGrarefied/GGotus_rar_5K.qza" --p-metric "chao1" --o-alpha-diversity "GGrarefied/GGalpha_chao.qza"
 qiime tools export --input-path "GGrarefied/GGalpha_chao.qza" --output-path "GGrarefied/GGalpha_chao.tsv" --output-format "AlphaDiversityFormat"
 ```
 _____________________________________________________________________________________________________________________________________________________
+### VAR#2 - Make readable taxa tables
+
+```
+mkdir GGotus
+qiime tools export --input-path "GGrarefied/GGotus_rar_5K.qza" --output-path "GGotus"
+qiime taxa collapse --i-table "GGrarefied/GGotus_rar_5K.qza" --i-taxonomy "deblur-taxonomy/deblur-taxonomy.qza" --p-level 7 --o-collapsed-table "GGotus/collapse_7.qza"
+qiime tools export --input-path "GGotus/collapse_7.qza" --output-path "GGotus/GGsummarized_taxa"
+
+biom convert -i "GGotus/GGsummarized_taxa/feature-table.biom" -o "GGotus/GGsummarized_taxa/GGotu_table_L7.txt" --to-tsv
+biom convert -i "GGotus/feature-table.biom" -o "GGotus/GGsummarized_taxa/GGotu_table.txt" --to-tsv
+```
+_____________________________________________________________________________________________________________________________________________________
+### Visualisation VAR#2
+```
+qiime taxa barplot --i-table GGrarefied/GGotus_rar_5K.qza --i-taxonomy deblur-taxonomy/deblur-taxonomy.qza --o-visualization deblur-taxonomy/GGtaxa-bar-plots.qzv 
+```
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/d9d04404-57a3-4c28-87ab-e5894f9d0804)
+
+С бд GreenGenes последней отличия минимальны.
+
