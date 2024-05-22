@@ -27,7 +27,7 @@ You have to begin with creating manifest.tmp (tab-separated file, where first co
 
 My manifest.tmp will look like this:
 ```
-sample-id     	absolute-filepath
+sample-id  absolute-filepath
 Sample-70  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962970.fastq
 Sample-52  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962952.fastq
 Sample-53  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962953.fastq
