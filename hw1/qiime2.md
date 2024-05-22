@@ -120,7 +120,7 @@ otu_table.txt
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/4b06a257-61fd-428b-959b-5e1d5bdc8de9)
 
 _____________________________________________________________________________________________________________________________________________________
-### Visualisation 
+### Visualisation VAR#1
 ```
 qiime taxa barplot --i-table rarefied/otus_rar_5K.qza --i-taxonomy taxonomy/taxonomy.qza --o-visualization taxonomy/taxa-bar-plots.qzv 
 ```
@@ -139,4 +139,12 @@ Now we have got the files with taxonomy GGdeblur-taxonomy.qza and GGdeblur-taxon
 
 but these files weren't normalised and for now we can't define any meanings as diversity indexes, let's do it in the following step.
 _________________________________________________________________________________________________________________________________________________
+### VAR#2 - Normalisation and Alpha-diversity by Chao1 index
 
+```
+mkdir GGrarefied
+qiime feature-table rarefy --i-table "denoising/feature_table.qza" --p-sampling-depth 10000 --o-rarefied-table "GGrarefied/GGotus_rar_5K.qza"
+qiime diversity alpha --i-table "GGrarefied/GGotus_rar_5K.qza" --p-metric "chao1" --o-alpha-diversity "GGrarefied/GGalpha_chao.qza"
+qiime tools export --input-path "GGrarefied/GGalpha_chao.qza" --output-path "GGrarefied/GGalpha_chao.tsv" --output-format "AlphaDiversityFormat"
+```
+_____________________________________________________________________________________________________________________________________________________
