@@ -74,7 +74,7 @@ classify-sklearn with a Naive Bayes classifier outperforms other methods we’ve
 ```
 mkdir deblur-taxonomy
 qiime feature-classifier classify-sklearn --i-classifier ../silva138_AB_V4_classifier.qza --i-reads denoising/deblur-rep-seqs.qza --o-classification "deblur-taxonomy/deblur-taxonomy.qza" --p-confidence 0.94
-qiime tools export --input-path "taxonomy/taxonomy.qza" --output-path "taxonomy"
+qiime tools export --input-path "deblur-taxonomy/deblur-taxonomy.qza" --output-path "deblur-taxonomy"
 ```
 Now we have got the files with taxonomy taxonomy.qza and taxonomy.tsv. taxonomy.tsv will look like that:
 
