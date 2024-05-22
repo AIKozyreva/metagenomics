@@ -18,15 +18,6 @@ ________________________________________________________________________________
 **Installing** 
 ```
 conda install q2-picrust2=2023.2 -c conda-forge -c bioconda -c gavinmdouglas
-________________________________________________________________________________________
-usage: picrust2_pipeline.py [-h] -s PATH -i PATH -o PATH [-p PROCESSES] [-t epa-ng|sepp] [-r PATH] [--in_traits IN_TRAITS] [--custom_trait_tables PATH]                  
-optional arguments:
-  -s PATH, --study_fasta PATH
-                        FASTA of unaligned study sequences (e.g. ASVs). The headerline should be only one field (i.e. no additional whitespace-delimited fields).
-  -i PATH, --input PATH
-                        Input table of sequence abundances (BIOM, TSV or mothur shared file format).
-  -o PATH, --output PATH
-                        Output folder for final files.
 ```
 **Running**
 
