@@ -89,8 +89,6 @@ normalisation by sequencing depth, which is called in microbiome analysis - rare
 
 When sequencing microbiome samples, each sample may have been sequenced to a different depth, meaning some samples have more sequencing reads (i.e., more data) than others. This discrepancy in sequencing depth can introduce bias when comparing diversity metrics between samples, as samples with more sequencing reads may appear to have higher diversity simply because more microbial species were detected due to deeper sequencing. To address this issue, rarefaction involves randomly subsampling the reads within each sample to an even depth, which is typically determined based on the sample with the lowest number of reads (or a predetermined depth). This process ensures that all samples have the same number of sequencing reads, thus providing a fair basis for comparing diversity metrics across samples.
 
-
-
 ```
 mkdir rarefied
 qiime feature-table rarefy --i-table "denoising/feature_table.qza" --p-sampling-depth 10000 --o-rarefied-table "rarefied/otus_rar_5K.qza"
@@ -103,14 +101,12 @@ qiime diversity alpha --i-table "rarefied/otus_rar_5K.qza" --p-metric "chao1" --
 qiime tools export --input-path "rarefied/alpha_chao.qza" --output-path "rarefied/alpha_chao.tsv" --output-format "AlphaDiversityFormat"
 ```
 _____________________________________________________________________________________________________________________________________________________
-
-
 ### Make readable taxa tables
 
 ```
 mkdir otus
 qiime tools export --input-path "rarefied/otus_rar_5K.qza" --output-path "otus"
-qiime taxa collapse --i-table "rarefied/otus_rar_5K.qza" --i-taxonomy "taxonomy/taxonomy.qza" --p-level 6 --o-collapsed-table "otus/collapse_6.qza"
+qiime taxa collapse --i-table "rarefied/otus_rar_5K.qza" --i-taxonomy "deblur-taxonomy/deblur-taxonomy.qza" --p-level 7 --o-collapsed-table "otus/collapse_6.qza"
 qiime tools export --input-path "otus/collapse_6.qza" --output-path "otus/summarized_taxa"
 
 biom convert -i "otus/summarized_taxa/feature-table.biom" -o "otus/summarized_taxa/otu_table_L6.txt" --to-tsv
@@ -128,3 +124,4 @@ ________________________________________________________________________________
 ```
 qiime taxa barplot --i-table rarefied/otus_rar_5K.qza --i-taxonomy taxonomy/taxonomy.qza --o-visualization taxonomy/taxa-bar-plots.qzv 
 ```
+![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/029b541c-203c-4bd1-a331-74198d3140cb)
