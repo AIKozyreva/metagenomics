@@ -25,10 +25,6 @@ ________________________________________________________________________________
 conda install q2-picrust2=2023.2 -c conda-forge -c bioconda -c gavinmdouglas
 ________________________________________________________________________________________
 usage: picrust2_pipeline.py [-h] -s PATH -i PATH -o PATH [-p PROCESSES] [-t epa-ng|sepp] [-r PATH] [--in_traits IN_TRAITS] [--custom_trait_tables PATH]                  
-                            [--marker_gene_table PATH] [--pathway_map MAP] [--reaction_func MAP] [--no_pathways] [--regroup_map ID_MAP] [--no_regroup] [--stratified]    
-                            [--max_nsti FLOAT] [--min_reads INT] [--min_samples INT] [-m {mp,emp_prob,pic,scp,subtree_average}] [-e EDGE_EXPONENT]                       
-                            [--min_align MIN_ALIGN] [--skip_nsti] [--skip_minpath] [--no_gap_fill] [--coverage] [--per_sequence_contrib] [--wide_table] [--skip_norm]
-                            [--remove_intermediate] [--verbose] [-v]
 optional arguments:
   -s PATH, --study_fasta PATH
                         FASTA of unaligned study sequences (e.g. ASVs). The headerline should be only one field (i.e. no additional whitespace-delimited fields).
@@ -38,7 +34,7 @@ optional arguments:
                         Output folder for final files.
 ```
 Then, we have to start the whole Picrust pipeline by the command: 
-
+**Running**
 ```
 picrust2_pipeline.py -s /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/denoising/dna-sequences.fasta -i /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/otus/feature-table.biom -o picrust -p 1
 ```
