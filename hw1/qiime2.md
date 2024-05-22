@@ -125,3 +125,18 @@ ________________________________________________________________________________
 qiime taxa barplot --i-table rarefied/otus_rar_5K.qza --i-taxonomy taxonomy/taxonomy.qza --o-visualization taxonomy/taxa-bar-plots.qzv 
 ```
 ![image](https://github.com/AIKozyreva/metagenomics/assets/74992091/029b541c-203c-4bd1-a331-74198d3140cb)
+
+_________________________________________________________________________________________________________________________________________________
+
+### VAR#2 - Classifing our representative sequences by scklearn classificator based on Green Genes database
+
+```
+mkdir GGdeblur-taxonomy
+qiime feature-classifier classify-sklearn --i-classifier ../gg_FC_2024v.qza --i-reads denoising/deblur-rep-seqs.qza --o-classification "GGdeblur-taxonomy/GGdeblur-taxonomy.qza" --p-confidence 0.94
+qiime tools export --input-path "GGdeblur-taxonomy/GGdeblur-taxonomy.qza" --output-path "GGdeblur-taxonomy"
+```
+Now we have got the files with taxonomy GGdeblur-taxonomy.qza and GGdeblur-taxonomy.tsv. 
+
+but these files weren't normalised and for now we can't define any meanings as diversity indexes, let's do it in the following step.
+_________________________________________________________________________________________________________________________________________________
+
