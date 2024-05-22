@@ -28,11 +28,11 @@ You have to begin with creating manifest.tmp (tab-separated file, where first co
 My manifest.tmp will look like this:
 ```
 sample-id     	absolute-filepath
-SRR28372428  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28372428.fastq
-SRR28372429  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28372429.fastq
-SRR28372430  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28372430.fastq
-SRR28372423  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28372423.fastq
-SRR28372424  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28372424.fastq
+Sample-70  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962970.fastq
+Sample-52  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962952.fastq
+Sample-53  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962953.fastq
+Sample-54  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962954.fastq
+Sample-55  /mnt/SSD4TB/PROJECTS/kozyreva_works/qiime2/HW_hum_gut/gut_data/SRR28962955.fastq
 ```
 Okay, then we start import our data into specific qiime2 format .gza (seq.gza will be the output for this step)
 
